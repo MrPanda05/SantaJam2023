@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://brsdnn8o3v0jq"]
+
+[ext_resource type="PackedScene" uid="uid://crv6vmesn5jtl" path="res://RealGame/Scenes/InteractionScenes/InteractableArea.tscn" id="1_exb06"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rnwu3"]
+radius = 34.1321
+
+[node name="InteractableTest" type="Node2D"]
+
+[node name="InteractableArea" parent="." instance=ExtResource("1_exb06")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableArea"]
+shape = SubResource("CircleShape2D_rnwu3")

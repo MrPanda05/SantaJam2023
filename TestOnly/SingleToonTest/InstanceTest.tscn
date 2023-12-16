@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cd1l7x8oudn4p"]
+
+[ext_resource type="Script" path="res://TestOnly/SingleToonTest/InstanceTest.cs" id="1_m6ilg"]
+
+[node name="InstanceTest" type="Node"]
+editor_description = "Test things about Singletoon"
+script = ExtResource("1_m6ilg")

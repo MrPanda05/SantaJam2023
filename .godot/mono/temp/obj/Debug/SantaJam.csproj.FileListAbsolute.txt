@@ -1,0 +1,17 @@
+C:\Users\Adelar\Desktop\Uso\Projetos\Programming\_GodotProjects\SantaJam\.godot\mono\temp\bin\Debug\SantaJam.deps.json
+C:\Users\Adelar\Desktop\Uso\Projetos\Programming\_GodotProjects\SantaJam\.godot\mono\temp\bin\Debug\SantaJam.runtimeconfig.json
+C:\Users\Adelar\Desktop\Uso\Projetos\Programming\_GodotProjects\SantaJam\.godot\mono\temp\bin\Debug\SantaJam.dll
+C:\Users\Adelar\Desktop\Uso\Projetos\Programming\_GodotProjects\SantaJam\.godot\mono\temp\bin\Debug\SantaJam.pdb
+C:\Users\Adelar\Desktop\Uso\Projetos\Programming\_GodotProjects\SantaJam\.godot\mono\temp\bin\Debug\GodotSharp.dll
+C:\Users\Adelar\Desktop\Uso\Projetos\Programming\_GodotProjects\SantaJam\.godot\mono\temp\bin\Debug\GodotSharpEditor.dll
+C:\Users\Adelar\Desktop\Uso\Projetos\Programming\_GodotProjects\SantaJam\.godot\mono\temp\obj\Debug\SantaJam.csproj.AssemblyReference.cache
+C:\Users\Adelar\Desktop\Uso\Projetos\Programming\_GodotProjects\SantaJam\.godot\mono\temp\obj\Debug\SantaJam.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Adelar\Desktop\Uso\Projetos\Programming\_GodotProjects\SantaJam\.godot\mono\temp\obj\Debug\SantaJam.AssemblyInfoInputs.cache
+C:\Users\Adelar\Desktop\Uso\Projetos\Programming\_GodotProjects\SantaJam\.godot\mono\temp\obj\Debug\SantaJam.AssemblyInfo.cs
+C:\Users\Adelar\Desktop\Uso\Projetos\Programming\_GodotProjects\SantaJam\.godot\mono\temp\obj\Debug\SantaJam.csproj.CoreCompileInputs.cache
+C:\Users\Adelar\Desktop\Uso\Projetos\Programming\_GodotProjects\SantaJam\.godot\mono\temp\obj\Debug\SantaJam.csproj.CopyComplete
+C:\Users\Adelar\Desktop\Uso\Projetos\Programming\_GodotProjects\SantaJam\.godot\mono\temp\obj\Debug\SantaJam.dll
+C:\Users\Adelar\Desktop\Uso\Projetos\Programming\_GodotProjects\SantaJam\.godot\mono\temp\obj\Debug\refint\SantaJam.dll
+C:\Users\Adelar\Desktop\Uso\Projetos\Programming\_GodotProjects\SantaJam\.godot\mono\temp\obj\Debug\SantaJam.pdb
+C:\Users\Adelar\Desktop\Uso\Projetos\Programming\_GodotProjects\SantaJam\.godot\mono\temp\obj\Debug\SantaJam.genruntimeconfig.cache
+C:\Users\Adelar\Desktop\Uso\Projetos\Programming\_GodotProjects\SantaJam\.godot\mono\temp\obj\Debug\ref\SantaJam.dll

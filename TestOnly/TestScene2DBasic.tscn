@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://b0xotfd646221"]
+
+[ext_resource type="Script" path="res://TestOnly/TestScene2DBasic.cs" id="1_l1xhw"]
+[ext_resource type="PackedScene" uid="uid://dr2wgbajb4tsa" path="res://TestOnly/SignalsAndEventsTest/SignalsTest.tscn" id="2_ax733"]
+[ext_resource type="PackedScene" uid="uid://dfq71j67b4cic" path="res://TestOnly/CompositionTest/TestComposition.tscn" id="2_rwfl1"]
+[ext_resource type="PackedScene" uid="uid://dyndj3hjtci4g" path="res://TestOnly/CompositionTest/TestHealthComponent.tscn" id="3_pko6w"]
+
+[node name="TestSceneBasic" type="Node2D"]
+editor_description = "Test scene 2D to test thingso on"
+script = ExtResource("1_l1xhw")
+
+[node name="SignalsTest" parent="." instance=ExtResource("2_ax733")]
+
+[node name="TestComposition" parent="." node_paths=PackedStringArray("healthComponent") instance=ExtResource("2_rwfl1")]
+healthComponent = NodePath("TestHealthComponent")
+
+[node name="TestHealthComponent" parent="TestComposition" instance=ExtResource("3_pko6w")]

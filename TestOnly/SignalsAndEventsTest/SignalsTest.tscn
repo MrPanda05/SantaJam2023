@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://dr2wgbajb4tsa"]
+
+[ext_resource type="Script" path="res://TestOnly/SignalsAndEventsTest/SignalsTest.cs" id="1_3odoq"]
+[ext_resource type="Script" path="res://TestOnly/SignalsAndEventsTest/TestEmiter.cs" id="2_3fjdx"]
+[ext_resource type="Script" path="res://TestOnly/SignalsAndEventsTest/CshartpsEvents.cs" id="3_o3m4m"]
+[ext_resource type="Script" path="res://TestOnly/SignalsAndEventsTest/CsharpDelChild.cs" id="4_bpaqd"]
+
+[node name="SignalsTest" type="Node2D"]
+script = ExtResource("1_3odoq")
+
+[node name="TestEmiter" type="Node2D" parent="." node_paths=PackedStringArray("Health")]
+script = ExtResource("2_3fjdx")
+Health = NodePath("..")
+
+[node name="CsharpDelegates" type="Node2D" parent="."]
+script = ExtResource("3_o3m4m")
+
+[node name="CsharpDelChild" type="Node2D" parent="CsharpDelegates" node_paths=PackedStringArray("externalFile")]
+script = ExtResource("4_bpaqd")
+externalFile = NodePath("..")

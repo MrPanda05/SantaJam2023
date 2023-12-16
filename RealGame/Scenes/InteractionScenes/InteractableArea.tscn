@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://crv6vmesn5jtl"]
+
+[ext_resource type="Script" path="res://RealGame/Scripts/InteractionScripts/InteractableArea.cs" id="1_ib8x4"]
+
+[node name="InteractableArea" type="Area2D"]
+collision_layer = 4
+script = ExtResource("1_ib8x4")
+
+[connection signal="area_entered" from="." to="." method="OnAreaEntered"]
+[connection signal="area_exited" from="." to="." method="OnAreaExited"]
