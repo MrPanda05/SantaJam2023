@@ -1,0 +1,64 @@
+[gd_scene load_steps=12 format=3 uid="uid://d32wynahvkrvw"]
+
+[ext_resource type="PackedScene" uid="uid://d0s5l0ic8ww56" path="res://Game/Common/Components/AnimSpriteComponent.tscn" id="1_n1bfx"]
+[ext_resource type="Script" path="res://Game/Player/Player.cs" id="1_nvw1e"]
+[ext_resource type="Texture2D" uid="uid://qjhjlrknlpem" path="res://Game/Art/PlaceHolder.png" id="2_ipcyt"]
+[ext_resource type="PackedScene" uid="uid://c72dkt004vg1g" path="res://Game/Common/FSM/FiniteStateMachine.tscn" id="3_ogtf5"]
+[ext_resource type="PackedScene" uid="uid://cw166qw37aytm" path="res://Game/Common/Components/HitBoxComponent.tscn" id="4_lirfx"]
+[ext_resource type="Script" path="res://Game/Player/States/PlayerMiddleWare.cs" id="5_cey5y"]
+[ext_resource type="PackedScene" uid="uid://cb7wsn6h051w" path="res://Game/Player/PlayerIventory.tscn" id="5_g5pcn"]
+[ext_resource type="Script" path="res://Game/Player/States/MoveState.cs" id="6_llgy3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xwgt5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ipcyt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_deesx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_myuo4"]
+size = Vector2(28, 34)
+
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+collision_mask = 6
+script = ExtResource("1_nvw1e")
+
+[node name="AnimSpriteComponent" parent="." instance=ExtResource("1_n1bfx")]
+sprite_frames = SubResource("SpriteFrames_xwgt5")
+
+[node name="ColiSolid" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 10)
+scale = Vector2(1.2, 0.6)
+shape = SubResource("CircleShape2D_deesx")
+
+[node name="Interactor" parent="." instance=ExtResource("4_lirfx")]
+collision_layer = 1
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactor"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_myuo4")
+
+[node name="PlayerIventory" parent="." instance=ExtResource("5_g5pcn")]
+
+[node name="FSM" parent="." node_paths=PackedStringArray("CurretnMiddleWare") instance=ExtResource("3_ogtf5")]
+InitialState = NodePath("Move")
+CurretnMiddleWare = NodePath("PlayerMiddleWare")
+
+[node name="PlayerMiddleWare" type="Node" parent="FSM"]
+script = ExtResource("5_cey5y")
+
+[node name="Move" type="Node" parent="FSM"]
+script = ExtResource("6_llgy3")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+drag_left_margin = 0.1
+drag_right_margin = 0.1
+editor_draw_limits = true
+editor_draw_drag_margin = true

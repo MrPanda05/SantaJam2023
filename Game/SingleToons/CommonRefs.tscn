@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://di1ub3h4082e5"]
+
+[ext_resource type="Script" path="res://Game/SingleToons/CommonRefs.cs" id="1_stnyx"]
+
+[node name="CommonRefs" type="Node"]
+script = ExtResource("1_stnyx")

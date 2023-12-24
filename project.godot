@@ -12,15 +12,17 @@ config_version=5
 
 config/name="SantaJam"
 config/tags=PackedStringArray("gamejam")
-run/main_scene="res://RealGame/Scenes/LevelTest.tscn"
+run/main_scene="res://Game/World&Map/TestMap.tscn"
 config/features=PackedStringArray("4.1", "C#", "Forward Plus")
 boot_splash/bg_color=Color(0.141176, 0.141176, 0.141176, 1)
 config/icon="res://icon.png"
 
 [autoload]
 
-InstanceTest="*res://TestOnly/SingleToonTest/InstanceTest.tscn"
-InteractorManager="*res://RealGame/Scenes/InteractionScenes/InteractorManager.tscn"
+InteractManager="*res://Game/InteractionSystem/InteractManager.tscn"
+CommonRefs="*res://Game/SingleToons/CommonRefs.tscn"
+InventoryManager="*res://Game/InventorySystem/InventoryManager.tscn"
+ItemTable="*res://Game/Items/ItemTable.tscn"
 
 [dotnet]
 
@@ -50,6 +52,11 @@ Down={
 }
 Interact={
 "deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":81,"key_label":0,"unicode":113,"echo":false,"script":null)
+]
+}
+Inventory={
+"deadzone": 0.5,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":101,"echo":false,"script":null)
 ]
 }
@@ -57,9 +64,10 @@ Interact={
 [layer_names]
 
 2d_physics/layer_1="Player"
-2d_physics/layer_2="Solids"
-2d_physics/layer_3="Interactables"
-2d_physics/layer_4="Animals"
+2d_physics/layer_2="SolidsColi"
+2d_physics/layer_3="Triggers"
+2d_physics/layer_4="InteractableArea"
+2d_physics/layer_5="Animals"
 
 [rendering]
 

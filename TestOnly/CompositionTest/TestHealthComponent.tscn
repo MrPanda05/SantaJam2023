@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dyndj3hjtci4g"]
-
-[ext_resource type="Script" path="res://TestOnly/CompositionTest/TestHealthComponent.cs" id="1_nsnd2"]
-
-[node name="TestHealthComponent" type="Node2D"]
-script = ExtResource("1_nsnd2")

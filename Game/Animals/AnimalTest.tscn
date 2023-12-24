@@ -1,0 +1,56 @@
+[gd_scene load_steps=13 format=3 uid="uid://bvykr8f4poaau"]
+
+[ext_resource type="Script" path="res://Game/Animals/AnimalTest.cs" id="1_2lgp0"]
+[ext_resource type="PackedScene" uid="uid://cgfq2krkukwfr" path="res://Game/InteractionSystem/InteractableArea.tscn" id="2_h1ivd"]
+[ext_resource type="PackedScene" uid="uid://cw166qw37aytm" path="res://Game/Common/Components/HitBoxComponent.tscn" id="3_ml713"]
+[ext_resource type="PackedScene" uid="uid://dckrbcmjbtcbr" path="res://Game/Common/Components/SpriteComponent.tscn" id="4_h41wy"]
+[ext_resource type="Texture2D" uid="uid://cbkmgd7rsg1kg" path="res://Game/Art/CatPlaceholder.png" id="5_uugcg"]
+[ext_resource type="PackedScene" uid="uid://c72dkt004vg1g" path="res://Game/Common/FSM/FiniteStateMachine.tscn" id="6_jwhxt"]
+[ext_resource type="Script" path="res://Game/Animals/AnimalTestMiddleWare.cs" id="7_jox8q"]
+[ext_resource type="Script" path="res://Game/Animals/States/TestStates/TestIddleState.cs" id="7_wb8f2"]
+[ext_resource type="Script" path="res://Game/Animals/States/TestStates/FollowState.cs" id="8_0mon3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fvkfy"]
+radius = 26.0768
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o261q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hyhqs"]
+size = Vector2(20, 4)
+
+[node name="AnimalTest" type="CharacterBody2D"]
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("1_2lgp0")
+typeAnimal = "AnimalTest"
+descAnimal = "This is a test animal"
+
+[node name="InteractableArea" parent="." instance=ExtResource("2_h1ivd")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableArea"]
+shape = SubResource("CircleShape2D_fvkfy")
+
+[node name="HitBoxComponent" parent="." instance=ExtResource("3_ml713")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxComponent"]
+shape = SubResource("CircleShape2D_o261q")
+
+[node name="SpriteComponent" parent="." instance=ExtResource("4_h41wy")]
+texture = ExtResource("5_uugcg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_hyhqs")
+
+[node name="FiniteStateMachine" parent="." node_paths=PackedStringArray("middleware") instance=ExtResource("6_jwhxt")]
+InitialState = NodePath("FollowState")
+middleware = NodePath("AnimalTestMiddleWare")
+
+[node name="AnimalTestMiddleWare" type="Node" parent="FiniteStateMachine"]
+script = ExtResource("7_jox8q")
+
+[node name="IddleState" type="Node" parent="FiniteStateMachine"]
+script = ExtResource("7_wb8f2")
+
+[node name="FollowState" type="Node" parent="FiniteStateMachine"]
+script = ExtResource("8_0mon3")

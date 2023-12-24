@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://klcxr3fd4gg6"]
-
-[ext_resource type="Script" path="res://RealGame/Scripts/ComponentsScript/HungerComponent.cs" id="1_52j3e"]
-
-[node name="HungerComponent" type="Node2D"]
-script = ExtResource("1_52j3e")

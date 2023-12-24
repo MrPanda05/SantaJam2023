@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3 uid="uid://dktkfq7iyby02"]
+
+[ext_resource type="PackedScene" uid="uid://cgfq2krkukwfr" path="res://Game/InteractionSystem/InteractableArea.tscn" id="1_7pbcp"]
+[ext_resource type="Script" path="res://Game/Items/ItemTest.cs" id="1_qr2tn"]
+[ext_resource type="PackedScene" uid="uid://dckrbcmjbtcbr" path="res://Game/Common/Components/SpriteComponent.tscn" id="2_jqsv4"]
+[ext_resource type="PackedScene" uid="uid://cw166qw37aytm" path="res://Game/Common/Components/HitBoxComponent.tscn" id="3_mqdts"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d7jng"]
+radius = 21.0238
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_csj4y"]
+
+[node name="ItemTest" type="Node2D"]
+script = ExtResource("1_qr2tn")
+rarity = 5
+itemName = "ItemTest"
+description = "This is a test"
+price = 20.5
+ID = -1
+
+[node name="InteractableArea" parent="." instance=ExtResource("1_7pbcp")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableArea"]
+shape = SubResource("CircleShape2D_d7jng")
+
+[node name="SpriteComponent" parent="." instance=ExtResource("2_jqsv4")]
+
+[node name="HitBoxComponent" parent="." instance=ExtResource("3_mqdts")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxComponent"]
+shape = SubResource("CircleShape2D_csj4y")

@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dojhwsgwsetd6"]
+
+[ext_resource type="PackedScene" uid="uid://d32wynahvkrvw" path="res://Game/Player/Player.tscn" id="1_vgt6y"]
+[ext_resource type="PackedScene" uid="uid://cticcknnjpsvw" path="res://Game/InteractionSystem/InteractableTest.tscn" id="2_coadu"]
+[ext_resource type="PackedScene" uid="uid://dktkfq7iyby02" path="res://Game/Items/ItemTest.tscn" id="3_hg410"]
+[ext_resource type="PackedScene" uid="uid://bvykr8f4poaau" path="res://Game/Animals/AnimalTest.tscn" id="4_pcxw1"]
+
+[node name="TestMap" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_vgt6y")]
+
+[node name="InteractableTest" parent="." instance=ExtResource("2_coadu")]
+position = Vector2(263, 160)
+
+[node name="ItemTest" parent="." instance=ExtResource("3_hg410")]
+position = Vector2(223, 91)
+
+[node name="AnimalTest" parent="." instance=ExtResource("4_pcxw1")]
+position = Vector2(126, 216)
+
+[node name="AnimalTest2" parent="." instance=ExtResource("4_pcxw1")]
+position = Vector2(197, 275)
+
+[node name="ItemTest2" parent="." instance=ExtResource("3_hg410")]
+position = Vector2(221, 88)
+
+[node name="ItemTest3" parent="." instance=ExtResource("3_hg410")]
+position = Vector2(285, 91)

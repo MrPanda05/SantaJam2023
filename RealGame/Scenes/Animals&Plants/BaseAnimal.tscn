@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://c8dcui4y8agfd"]
-
-[ext_resource type="Script" path="res://RealGame/Scripts/Animal&Plants/BaseAnimal.cs" id="1_ohn8i"]
-
-[node name="BaseAnimal" type="CharacterBody2D"]
-collision_layer = 8
-collision_mask = 2
-script = ExtResource("1_ohn8i")

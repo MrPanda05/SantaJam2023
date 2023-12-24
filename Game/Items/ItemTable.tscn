@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b17oqdkfn4fhr"]
+
+[ext_resource type="Script" path="res://Game/Items/ItemTable.cs" id="1_gr2fm"]
+[ext_resource type="PackedScene" uid="uid://dktkfq7iyby02" path="res://Game/Items/ItemTest.tscn" id="2_uss86"]
+
+[node name="ItemTable" type="Node"]
+script = ExtResource("1_gr2fm")
+
+[node name="ItemTest" parent="." instance=ExtResource("2_uss86")]
+visible = false

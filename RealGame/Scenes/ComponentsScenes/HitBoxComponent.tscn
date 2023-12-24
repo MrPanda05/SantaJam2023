@@ -1,3 +1,0 @@
-[gd_scene format=3 uid="uid://clnnamb4xiu47"]
-
-[node name="HitBoxComponent" type="Area2D"]
