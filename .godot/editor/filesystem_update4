@@ -3,6 +3,7 @@ res://Game/Animals/AnimalTest.cs
 res://Game/Animals/AnimalTestMiddleWare.cs
 res://Game/Animals/States/TestStates/FollowState.cs
 res://Game/Animals/States/TestStates/TestIddleState.cs
+res://Game/Common/Components/HealthComponent.cs
 res://Game/Common/FSM/FiniteStateMachine.cs
 res://Game/Common/FSM/Middleware.cs
 res://Game/Common/States/State.cs
@@ -21,3 +22,4 @@ res://Game/SingleToons/CommonRefs.cs
 res://Game/World&Map/TestMap.tscn
 res://Game/Animals/AnimalTest.tscn
 res://Game/Items/ItemTest.tscn
+res://Game/Common/Components/HealthComponent.tscn

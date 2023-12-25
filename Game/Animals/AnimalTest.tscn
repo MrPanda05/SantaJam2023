@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://bvykr8f4poaau"]
+[gd_scene load_steps=14 format=3 uid="uid://bvykr8f4poaau"]
 
 [ext_resource type="Script" path="res://Game/Animals/AnimalTest.cs" id="1_2lgp0"]
+[ext_resource type="PackedScene" uid="uid://bx0boopjmiowp" path="res://Game/Common/Components/HealthComponent.tscn" id="2_fpf5i"]
 [ext_resource type="PackedScene" uid="uid://cgfq2krkukwfr" path="res://Game/InteractionSystem/InteractableArea.tscn" id="2_h1ivd"]
 [ext_resource type="PackedScene" uid="uid://cw166qw37aytm" path="res://Game/Common/Components/HitBoxComponent.tscn" id="3_ml713"]
 [ext_resource type="PackedScene" uid="uid://dckrbcmjbtcbr" path="res://Game/Common/Components/SpriteComponent.tscn" id="4_h41wy"]
@@ -24,6 +25,8 @@ collision_mask = 2
 script = ExtResource("1_2lgp0")
 typeAnimal = "AnimalTest"
 descAnimal = "This is a test animal"
+
+[node name="HealthComponent" parent="." instance=ExtResource("2_fpf5i")]
 
 [node name="InteractableArea" parent="." instance=ExtResource("2_h1ivd")]
 

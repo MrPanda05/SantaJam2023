@@ -16,6 +16,7 @@ public partial class Animal : CharacterBody2D
     //Components
     public InteractableArea area;
     public FiniteStateMachine FSM;
+    public HealthComponent animalHealthComponent;
 
     public void SetRandomNameOnStart()
     {
