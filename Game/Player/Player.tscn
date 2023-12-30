@@ -1,64 +1,41 @@
-[gd_scene load_steps=12 format=3 uid="uid://d32wynahvkrvw"]
+[gd_scene load_steps=10 format=3 uid="uid://boa2rjwc18idt"]
 
-[ext_resource type="PackedScene" uid="uid://d0s5l0ic8ww56" path="res://Game/Common/Components/AnimSpriteComponent.tscn" id="1_n1bfx"]
-[ext_resource type="Script" path="res://Game/Player/Player.cs" id="1_nvw1e"]
-[ext_resource type="Texture2D" uid="uid://qjhjlrknlpem" path="res://Game/Art/PlaceHolder.png" id="2_ipcyt"]
-[ext_resource type="PackedScene" uid="uid://c72dkt004vg1g" path="res://Game/Common/FSM/FiniteStateMachine.tscn" id="3_ogtf5"]
-[ext_resource type="PackedScene" uid="uid://cw166qw37aytm" path="res://Game/Common/Components/HitBoxComponent.tscn" id="4_lirfx"]
-[ext_resource type="Script" path="res://Game/Player/States/PlayerMiddleWare.cs" id="5_cey5y"]
-[ext_resource type="PackedScene" uid="uid://cb7wsn6h051w" path="res://Game/Player/PlayerIventory.tscn" id="5_g5pcn"]
-[ext_resource type="Script" path="res://Game/Player/States/MoveState.cs" id="6_llgy3"]
+[ext_resource type="PackedScene" uid="uid://c35idiht02vvw" path="res://Game/Commons/FSM/FSM.tscn" id="1_i4iwd"]
+[ext_resource type="Script" path="res://Game/Player/Player.cs" id="1_x7v7n"]
+[ext_resource type="PackedScene" uid="uid://d33bk8fqrpdgl" path="res://Game/Commons/Components/HitBoxComponent.tscn" id="2_ogih3"]
+[ext_resource type="Script" path="res://Game/Player/States/Pwalk.cs" id="3_rcs27"]
+[ext_resource type="Script" path="res://Game/Player/States/Pinventory.cs" id="4_2b2r5"]
+[ext_resource type="Script" path="res://Game/Player/States/PPause.cs" id="5_dgs7n"]
+[ext_resource type="Script" path="res://Game/Player/States/Pinteracting.cs" id="6_r0rjp"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_xwgt5"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_ipcyt")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[sub_resource type="CircleShape2D" id="CircleShape2D_g5xyq"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_deesx"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_myuo4"]
-size = Vector2(28, 34)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_smtuv"]
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
-collision_mask = 6
-script = ExtResource("1_nvw1e")
+collision_mask = 22
+script = ExtResource("1_x7v7n")
 
-[node name="AnimSpriteComponent" parent="." instance=ExtResource("1_n1bfx")]
-sprite_frames = SubResource("SpriteFrames_xwgt5")
-
-[node name="ColiSolid" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 10)
-scale = Vector2(1.2, 0.6)
-shape = SubResource("CircleShape2D_deesx")
-
-[node name="Interactor" parent="." instance=ExtResource("4_lirfx")]
-collision_layer = 1
+[node name="HitBoxComponent" parent="." instance=ExtResource("2_ogih3")]
 collision_mask = 8
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactor"]
-position = Vector2(0, -1)
-shape = SubResource("RectangleShape2D_myuo4")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxComponent"]
+shape = SubResource("CircleShape2D_g5xyq")
 
-[node name="PlayerIventory" parent="." instance=ExtResource("5_g5pcn")]
+[node name="FSM" parent="." instance=ExtResource("1_i4iwd")]
+InitialState = NodePath("Pwalk")
 
-[node name="FSM" parent="." node_paths=PackedStringArray("CurretnMiddleWare") instance=ExtResource("3_ogtf5")]
-InitialState = NodePath("Move")
-CurretnMiddleWare = NodePath("PlayerMiddleWare")
+[node name="Pwalk" type="Node" parent="FSM"]
+script = ExtResource("3_rcs27")
 
-[node name="PlayerMiddleWare" type="Node" parent="FSM"]
-script = ExtResource("5_cey5y")
+[node name="Pinventory" type="Node" parent="FSM"]
+script = ExtResource("4_2b2r5")
 
-[node name="Move" type="Node" parent="FSM"]
-script = ExtResource("6_llgy3")
+[node name="PPause" type="Node" parent="FSM"]
+script = ExtResource("5_dgs7n")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-drag_left_margin = 0.1
-drag_right_margin = 0.1
-editor_draw_limits = true
-editor_draw_drag_margin = true
+[node name="Pinteracting" type="Node" parent="FSM"]
+script = ExtResource("6_r0rjp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_smtuv")

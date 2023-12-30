@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://ldyojlhro5k"]
+
+[ext_resource type="Texture2D" uid="uid://byov7knbfkk7q" path="res://Game/Art/ItemPlaceholder.png" id="1_1lxjt"]
+[ext_resource type="Script" path="res://Game/Items/Fruit.cs" id="1_6clc4"]
+[ext_resource type="PackedScene" uid="uid://ly2ynswx8k7w" path="res://Game/InteractionSystem/InteractableArea.tscn" id="2_5er1l"]
+[ext_resource type="PackedScene" uid="uid://ctxhym8qf3q6p" path="res://Game/InteractionSystem/InteractableLogic.tscn" id="3_b430n"]
+[ext_resource type="Script" path="res://Game/Items/ItemsTest/FruitLogic.cs" id="4_vlqxy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5xpmy"]
+radius = 13.6015
+
+[node name="Fruit" type="Node2D"]
+editor_description = "ShowCase of the interactableSystem
+"
+script = ExtResource("1_6clc4")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_1lxjt")
+
+[node name="InteractableArea" parent="." instance=ExtResource("2_5er1l")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableArea"]
+shape = SubResource("CircleShape2D_5xpmy")
+
+[node name="InteractableLogic" parent="." instance=ExtResource("3_b430n")]
+script = ExtResource("4_vlqxy")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = -19.0
+offset_top = -24.0
+offset_right = 21.0
+offset_bottom = -1.0

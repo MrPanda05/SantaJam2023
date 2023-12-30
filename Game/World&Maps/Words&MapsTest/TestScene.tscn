@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://blxgxw45dvaob"]
+
+[ext_resource type="PackedScene" uid="uid://boa2rjwc18idt" path="res://Game/Player/Player.tscn" id="1_ibbk3"]
+[ext_resource type="PackedScene" uid="uid://ldyojlhro5k" path="res://Game/Items/Fruit.tscn" id="2_dr6aw"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_ibbk3")]
+
+[node name="Fruit" parent="." instance=ExtResource("2_dr6aw")]
+position = Vector2(71, 140)
