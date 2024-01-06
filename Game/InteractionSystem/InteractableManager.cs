@@ -26,6 +26,10 @@ public partial class InteractableManager : Node
         InteractablesAreas.Remove(area);
         OnUnRegister?.Invoke();
     }
+    /// <summary>
+    /// Gets the closest area to the player
+    /// </summary>
+    /// <returns>index of the closest area to the player</returns>
 	 public int GetTheClosest()
     {
         localIndex = 0;

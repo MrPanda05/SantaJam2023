@@ -1,10 +1,14 @@
 using Godot;
 using System;
 
-//Base class for interactable logic
+/// <summary>
+/// Base class that handles the logic of an object when being interacted
+/// This should be used in a component
+/// </summary>
 public partial class InteractableLogic : Node2D
 {
 	public InteractableArea area;
+    [Export] public FiniteStateMachine FSM = null;
     [Export] public string labelText = "[Q] to interact";
     [Export] public bool isSpecial;
     [Export] public string stateToChange = "Pinteracting";
@@ -44,9 +48,30 @@ public partial class InteractableLogic : Node2D
     {
         label.Visible = false;
     }
-
-    public ItemBaseClassTest GetMyNodeParent()
+    public void DisableProcess(Node node)
     {
-        return (ItemBaseClassTest)GetParent();
+        node.ProcessMode = ProcessModeEnum.Disabled;
     }
+    public void EnableProcess(Node node)
+    {
+        node.ProcessMode = ProcessModeEnum.Inherit;
+    }
+    
+
+    //"../../Player/Inventory", "../.." to add animal to inventory and remove from base scene tree
+    public void ChangeMyParent(NodePath pathToNewParent, NodePath oldParent)
+    {
+        Node newParent = GetNode(pathToNewParent);
+        GetNode(oldParent).RemoveChild(GetParent());
+        newParent.AddChild(GetParent());
+    }
+    //"../..", testAnimal.GetParent().GetPath(), testAnimal To remove animal from inventory and add to scene tree
+    public void ChangeMyParent(NodePath pathToNewParent, NodePath oldParent, Node nodeChange)
+    {
+        Node newParent = GetNode(pathToNewParent);
+        GetNode(oldParent).RemoveChild(nodeChange);
+        newParent.AddChild(nodeChange);
+    }
+
+    
 }

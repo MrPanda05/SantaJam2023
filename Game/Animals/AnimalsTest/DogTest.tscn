@@ -1,0 +1,60 @@
+[gd_scene load_steps=11 format=3 uid="uid://73gpofn78vvg"]
+
+[ext_resource type="Script" path="res://Game/Animals/AnimalsTest/DogTest.cs" id="1_607mx"]
+[ext_resource type="PackedScene" uid="uid://ly2ynswx8k7w" path="res://Game/InteractionSystem/InteractableArea.tscn" id="2_h0x2s"]
+[ext_resource type="Script" path="res://Game/Animals/AnimalsTest/DogLogic.cs" id="2_k1ehp"]
+[ext_resource type="PackedScene" uid="uid://bmlxkkt702dhd" path="res://Game/Animals/AnimalsStats.tscn" id="2_xmdn6"]
+[ext_resource type="Texture2D" uid="uid://cbkmgd7rsg1kg" path="res://Game/Art/CatPlaceholder.png" id="3_8i8qj"]
+[ext_resource type="PackedScene" uid="uid://c35idiht02vvw" path="res://Game/Commons/FSM/FSM.tscn" id="5_d36xk"]
+[ext_resource type="Script" path="res://Game/Animals/AnimalsTest/IddleTest.cs" id="6_b2sg1"]
+[ext_resource type="Script" path="res://Game/Animals/AnimalsTest/Wander.cs" id="7_27w7o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mbokb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ll4sy"]
+
+[node name="DogTest" type="CharacterBody2D" groups=["Animal"]]
+scale = Vector2(0.998724, 0.992084)
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("1_607mx")
+animalName = "Dog test"
+animalType = "Dog"
+
+[node name="AnimalsStats" parent="." instance=ExtResource("2_xmdn6")]
+
+[node name="DogLogic" type="Node2D" parent="." node_paths=PackedStringArray("FSM")]
+scale = Vector2(1.01571, 0.990937)
+script = ExtResource("2_k1ehp")
+FSM = NodePath("../FSM")
+
+[node name="InteractableArea" parent="." instance=ExtResource("2_h0x2s")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableArea"]
+shape = SubResource("RectangleShape2D_mbokb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_8i8qj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ll4sy")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = -16.0
+offset_top = -23.0
+offset_right = 24.0
+
+[node name="FSM" parent="." instance=ExtResource("5_d36xk")]
+InitialState = NodePath("Iddle")
+
+[node name="Iddle" type="Node" parent="FSM"]
+script = ExtResource("6_b2sg1")
+
+[node name="Wander" type="Node" parent="FSM"]
+script = ExtResource("7_27w7o")
+
+[node name="Timer" type="Timer" parent="FSM"]
+one_shot = true
+
+[connection signal="timeout" from="FSM/Timer" to="FSM/Wander" method="OnTimerTimeout"]

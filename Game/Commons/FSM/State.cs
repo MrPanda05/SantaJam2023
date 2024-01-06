@@ -12,7 +12,7 @@ public partial class State : Node
 	/// <summary>
 	/// Called each time the state is exit
 	/// </summary>
-	public virtual void Exit() {GD.Print("Changing state");}
+	public virtual void Exit() {}
 	/// <summary>
 	/// Called only once to be saved on cache
 	/// </summary>

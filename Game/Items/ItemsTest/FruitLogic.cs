@@ -1,6 +1,5 @@
 using Godot;
 using System;
-using System.Threading;
 
 // Demonstration of how the interactable logic should be used
 public partial class FruitLogic : InteractableLogic
@@ -8,19 +7,21 @@ public partial class FruitLogic : InteractableLogic
     //note the proprety isSpecial is going to be set only once while creating the interaction logic script
     //This example features how both should react
     //On actual interaction it will not check for special bool
+    private Fruit fruitItem;
     public void myInteraction()
     {
         if(area.GetIsSpecial())
         {
             area.OnInteract -= myInteraction;
-            GD.Print("I am a special fruit");
+            //GD.Print("I am a special fruit");
             DeleteSelf();
         }
         else
         {
-            InventoryManager.Instance.AddItem(GetMyNodeParent());
+            InventoryManager.Instance.IncreamentItemCount(fruitItem.itemName);
+            GD.Print(InventoryManager.Instance.GetItemDescription(fruitItem.itemName));
             area.OnInteract -= myInteraction;
-            GD.Print("I am not a special fruit");
+            //GD.Print("I am not a special fruit");
             DeleteSelf();
 
         }
@@ -28,6 +29,7 @@ public partial class FruitLogic : InteractableLogic
 	public override void _Ready()
 	{
         GetReady();
+        fruitItem = (Fruit)GetParent();
 		area.OnInteract += myInteraction;
 	}
 }

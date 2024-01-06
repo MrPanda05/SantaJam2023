@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://dwe4yn2xegbpo"]
+
+[ext_resource type="Texture2D" uid="uid://djd48ebsfxgba" path="res://Game/Art/SpawnerTestPlaceholder.png" id="1_ni05l"]
+[ext_resource type="PackedScene" uid="uid://ctxhym8qf3q6p" path="res://Game/InteractionSystem/InteractableLogic.tscn" id="2_2wesx"]
+[ext_resource type="PackedScene" uid="uid://ly2ynswx8k7w" path="res://Game/InteractionSystem/InteractableArea.tscn" id="2_g2o5g"]
+[ext_resource type="Script" path="res://Game/Items/SpawnOnInteract/SpawnerOnInteract.cs" id="3_bj0o1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pufbn"]
+size = Vector2(26, 26)
+
+[node name="Spawn" type="Node2D"]
+editor_description = "Spawn a fruit on interact"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ni05l")
+
+[node name="InteractableLogic" parent="." instance=ExtResource("2_2wesx")]
+script = ExtResource("3_bj0o1")
+
+[node name="InteractableArea" parent="." instance=ExtResource("2_g2o5g")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableArea"]
+position = Vector2(-1, -1)
+shape = SubResource("RectangleShape2D_pufbn")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = -13.0
+offset_top = -23.0
+offset_right = 27.0

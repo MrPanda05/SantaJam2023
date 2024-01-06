@@ -4,10 +4,18 @@ using System;
 //Player state for when they are on the inventory
 public partial class Pinventory : State
 {
-	public override void HandleInput(InputEvent @event)
+
+    private Player player;
+    public override void Readys()
+    {
+        player = (Player)GetParent().GetParent();
+    }
+    public override void HandleInput(InputEvent @event)
     {
         if(@event.IsActionPressed("Inventory"))
         {
+            //GD.Print(InventoryManager.Instance.GetItemDescription("Fruit2"));
+            player.UIcomponent.SetInvisible();
             FSM.TransitioToState("Pwalk");
         }
     }
