@@ -19,7 +19,10 @@ collision_layer = 16
 collision_mask = 2
 script = ExtResource("1_607mx")
 animalName = "Dog test"
+description = "I am a nigga"
 animalType = "Dog"
+itemSprite = ExtResource("3_8i8qj")
+metadata/_edit_horizontal_guides_ = [-84.0]
 
 [node name="AnimalsStats" parent="." instance=ExtResource("2_xmdn6")]
 

@@ -21,6 +21,7 @@ config/icon="res://icon.png"
 
 InteractableManager="*res://Game/InteractionSystem/InteractableManager.tscn"
 InventoryManager="*res://Game/InventorySystem/InventoryManager.tscn"
+UiManager="*res://Game/UI/UIManager.cs"
 
 [display]
 

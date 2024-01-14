@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://boa2rjwc18idt" path="res://Game/Player/Player.tscn" id="1_ibbk3"]
 [ext_resource type="PackedScene" uid="uid://ldyojlhro5k" path="res://Game/Items/ItemsTest/Fruit.tscn" id="2_dr6aw"]
-[ext_resource type="PackedScene" uid="uid://qcee1x28qjp4" path="res://Game/UItest/UI.tscn" id="3_448wu"]
+[ext_resource type="PackedScene" uid="uid://c13ryc5bqn65q" path="res://Game/UI/UI.tscn" id="3_448wu"]
 [ext_resource type="Script" path="res://Game/Commons/CameraControl.cs" id="3_m3kiu"]
 [ext_resource type="PackedScene" uid="uid://dwe4yn2xegbpo" path="res://Game/Items/SpawnOnInteract/Spawn.tscn" id="5_k1gm2"]
 [ext_resource type="PackedScene" uid="uid://bdbk0let36tmh" path="res://Game/Items/SpawnOnInteract/PrintDic.tscn" id="6_518po"]
@@ -11,6 +11,7 @@
 [node name="TestScene" type="Node2D"]
 
 [node name="HoldItemHidden" type="Node2D" parent="."]
+editor_description = "This holds all item that the player can get, so that it can be spawned"
 visible = false
 
 [node name="Fruit" parent="HoldItemHidden" instance=ExtResource("2_dr6aw")]
@@ -22,9 +23,6 @@ position = Vector2(34, 279)
 [node name="Fruit" parent="." instance=ExtResource("2_dr6aw")]
 position = Vector2(141, 250)
 
-[node name="Fruit2" parent="." instance=ExtResource("2_dr6aw")]
-position = Vector2(169, 201)
-
 [node name="Fruit3" parent="." instance=ExtResource("2_dr6aw")]
 position = Vector2(217, 245)
 
@@ -32,13 +30,15 @@ position = Vector2(217, 245)
 position = Vector2(242, 207)
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("followPlayer")]
+offset = Vector2(6.44, 0)
 limit_smoothed = true
 editor_draw_limits = true
 editor_draw_drag_margin = true
 script = ExtResource("3_m3kiu")
 followPlayer = NodePath("../Player")
 
-[node name="UI" parent="Camera2D" instance=ExtResource("3_448wu")]
+[node name="UIinventory" parent="Camera2D" instance=ExtResource("3_448wu")]
+visible = false
 offset_left = -571.0
 offset_top = -326.0
 offset_right = 581.0
@@ -50,5 +50,11 @@ position = Vector2(-7, 237)
 [node name="PrintDic" parent="." instance=ExtResource("6_518po")]
 position = Vector2(-103, 238)
 
+[node name="Fruit2" parent="PrintDic" instance=ExtResource("2_dr6aw")]
+position = Vector2(272, -37)
+
 [node name="DogTest" parent="." instance=ExtResource("7_j5eyx")]
 position = Vector2(78, 132)
+
+[node name="DogTest2" parent="." instance=ExtResource("7_j5eyx")]
+position = Vector2(221, 55)

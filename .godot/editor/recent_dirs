@@ -1,9 +1,9 @@
+res://Game/UI
 res://Game/Animals/AnimalsTest
 res://Game/Animals
 res://Game/Items/SpawnOnInteract
 res://Game/Commons
 res://Game/Commons/Components
-res://Game/UItest
 res://Game/InventorySystem
 res://Game/Items
 res://Game/InteractionSystem

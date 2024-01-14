@@ -19,8 +19,8 @@ public partial class DogLogic : InteractableLogic
     public void myInteraction()
     {
         Dog.Sound();
-        //AddThisToInventory();
-        FSM.TransitioToState("Wander");
+        AddThisToInventory();
+        //FSM.TransitioToState("Wander");
     }
 
     public void onPet()

@@ -12,7 +12,10 @@ public partial class InventoryManager : Node
     public static InventoryManager Instance {get; private set;}
 
     public Inventory playerInventory;
-    
+
+    public static Action OnItemIncrementCount;
+    public static Action<uint, BaseAnimal> OnAddAnimal;
+
     //! Items Part
     public void AddNewItem(string itemName)
     {
@@ -32,6 +35,7 @@ public partial class InventoryManager : Node
     public void IncreamentItemCount(string itemName, int count = 1)
     {
         playerInventory.countableItems[itemName] += count;
+        OnItemIncrementCount?.Invoke();
         //GD.Print($"Incremented {count} {itemName} and now you have {playerInventory.countableItems[itemName]}");
     }
     public void DecreamentItemCount(string itemName, int count = 1)
@@ -80,6 +84,7 @@ public partial class InventoryManager : Node
     {
         if(playerInventory.Animals.ContainsKey(ID)) return;
         playerInventory.Animals.Add(ID, animal);
+        OnAddAnimal?.Invoke(ID, animal);
         //playerInventory.UpdateItems();
     }
 
@@ -104,6 +109,15 @@ public partial class InventoryManager : Node
         var test = playerInventory.Animals[ID];
         playerInventory.Animals.Remove(ID);
         return test;
+    }
+
+    public Texture2D GetItemTexture(string itemName)
+    {
+        if(playerInventory.Items.ContainsKey(itemName))
+        {
+            return playerInventory.Items[itemName].itemSprite;
+        }
+        return null;
     }
 
 

@@ -21,7 +21,7 @@ public partial class Pwalk : State
         if(@event.IsActionPressed("Inventory"))
         {
             player.StopPlayer();
-            player.UIcomponent.SetVisible();
+            UIManager.Instance.Inventory.Visible = true;
             FSM.TransitioToState("Pinventory");
         }
         if(@event.IsActionPressed("Pause"))

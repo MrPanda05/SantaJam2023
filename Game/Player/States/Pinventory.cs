@@ -15,7 +15,7 @@ public partial class Pinventory : State
         if(@event.IsActionPressed("Inventory"))
         {
             //GD.Print(InventoryManager.Instance.GetItemDescription("Fruit2"));
-            player.UIcomponent.SetInvisible();
+            UIManager.Instance.Inventory.Visible = false;
             FSM.TransitioToState("Pwalk");
         }
     }
