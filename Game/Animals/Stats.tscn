@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bmlxkkt702dhd"]
+
+[node name="AnimalsStats" type="Node2D"]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0

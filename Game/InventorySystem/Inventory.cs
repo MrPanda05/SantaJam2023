@@ -12,7 +12,7 @@ public partial class Inventory : Node
     public Dictionary<string, Item> Items = new Dictionary<string, Item>();
     //Items dictionary NEEDS to get the hidden node "HoldItemHidden" otherwise it will break the game
 
-    public Dictionary<uint, BaseAnimal> Animals = new Dictionary<uint, BaseAnimal>();
+    public Dictionary<uint, Animal> Animals = new Dictionary<uint, Animal>();
 
     public void UpdateItems()
     {
@@ -41,7 +41,7 @@ public partial class Inventory : Node
 
     public void PrintAllAnimals()
     {
-        foreach (KeyValuePair<uint, BaseAnimal> entry in Animals)
+        foreach (KeyValuePair<uint, Animal> entry in Animals)
         {
             GD.Print($"{entry.Key} has value of {entry.Value} with {entry.Value.animalName}");
         }

@@ -4,9 +4,9 @@ using System;
 public partial class DogLogic : InteractableLogic
 {
     public DogTest Dog;
-    public void AddThisToInventory()
+    public override void AddThisToInventory()
     {
-        InventoryManager.Instance.AddAnimal(Dog.ID, Dog);
+        //InventoryManager.Instance.AddAnimal(Dog.ID, Dog);
         ChangeMyParent("../../Player/Inventory", "../..");
         DisableProcess(Dog);
         Dog.Visible = false;

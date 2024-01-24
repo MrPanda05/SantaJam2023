@@ -8,7 +8,7 @@ using System;
 public partial class InteractableLogic : Node2D
 {
 	public InteractableArea area;
-    [Export] public FiniteStateMachine FSM = null;
+    public FiniteStateMachine FSM = null;
     [Export] public string labelText = "[Q] to interact";
     [Export] public bool isSpecial;
     [Export] public string stateToChange = "Pinteracting";
@@ -72,6 +72,8 @@ public partial class InteractableLogic : Node2D
         GetNode(oldParent).RemoveChild(nodeChange);
         newParent.AddChild(nodeChange);
     }
+
+    public virtual void AddThisToInventory() {}
 
     
 }

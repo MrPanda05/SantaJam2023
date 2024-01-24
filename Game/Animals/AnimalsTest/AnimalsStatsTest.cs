@@ -3,7 +3,7 @@ using System;
 
 public partial class AnimalsStatsTest : Node2D
 {
-    private DogTest Dog;
+    private Animal myAnimal;
     private Timer timer;
     public float hunger = 10;
     public float thirst = 10;
@@ -27,7 +27,7 @@ public partial class AnimalsStatsTest : Node2D
 
     public override void _Ready()
 	{
-        Dog = GetNode<DogTest>("..");
+        myAnimal = GetNode<Animal>("..");
         timer = GetNode<Timer>("Timer");
 	}
 

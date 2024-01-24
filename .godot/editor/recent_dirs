@@ -1,6 +1,9 @@
+res://Game/Animals/AnimalsStates
+res://Game/Animals
+res://Game/Animals/Cat
+res://Game/Commons/FSM
 res://Game/UI
 res://Game/Animals/AnimalsTest
-res://Game/Animals
 res://Game/Items/SpawnOnInteract
 res://Game/Commons
 res://Game/Commons/Components
@@ -9,6 +12,5 @@ res://Game/Items
 res://Game/InteractionSystem
 res://Game/InteractionSystem/InteractionSystemTest
 res://Game/Player
-res://Game/Commons/FSM
 res://Game/World&Maps/Words&MapsTest
 res://

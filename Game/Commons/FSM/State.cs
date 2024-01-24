@@ -5,6 +5,7 @@ using System;
 public partial class State : Node
 {
 	public FiniteStateMachine FSM;
+	public IProxy proxy;
 	/// <summary>
 	/// Called Each time the state is enter
 	/// </summary>

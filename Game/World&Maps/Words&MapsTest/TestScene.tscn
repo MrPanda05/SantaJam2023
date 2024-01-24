@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://Game/Commons/CameraControl.cs" id="3_m3kiu"]
 [ext_resource type="PackedScene" uid="uid://dwe4yn2xegbpo" path="res://Game/Items/SpawnOnInteract/Spawn.tscn" id="5_k1gm2"]
 [ext_resource type="PackedScene" uid="uid://bdbk0let36tmh" path="res://Game/Items/SpawnOnInteract/PrintDic.tscn" id="6_518po"]
-[ext_resource type="PackedScene" uid="uid://73gpofn78vvg" path="res://Game/Animals/AnimalsTest/DogTest.tscn" id="7_j5eyx"]
+[ext_resource type="PackedScene" uid="uid://c8d4g2nhawnvy" path="res://Game/Animals/Cat/CatScene.tscn" id="7_krpsg"]
 
 [node name="TestScene" type="Node2D"]
 
@@ -53,8 +53,8 @@ position = Vector2(-103, 238)
 [node name="Fruit2" parent="PrintDic" instance=ExtResource("2_dr6aw")]
 position = Vector2(272, -37)
 
-[node name="DogTest" parent="." instance=ExtResource("7_j5eyx")]
-position = Vector2(78, 132)
+[node name="Cat" parent="." instance=ExtResource("7_krpsg")]
+position = Vector2(-148, 181)
 
-[node name="DogTest2" parent="." instance=ExtResource("7_j5eyx")]
-position = Vector2(221, 55)
+[node name="Cat2" parent="." instance=ExtResource("7_krpsg")]
+position = Vector2(-66, 170)

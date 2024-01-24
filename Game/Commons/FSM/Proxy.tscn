@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://w2un1cd7251g"]
+
+[node name="Proxy" type="Node"]
+editor_description = "A proxy is a way for states to get information about the node that they are changing, meaning, they can have anything they want"

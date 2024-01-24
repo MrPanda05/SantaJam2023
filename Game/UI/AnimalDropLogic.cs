@@ -3,7 +3,7 @@ using System;
 
 public partial class AnimalDropLogic : Panel
 {
-	public BaseAnimal currentAnimal;
+	public Animal currentAnimal;
 
 	public AnimalsUI animalUI;
 
@@ -15,7 +15,6 @@ public partial class AnimalDropLogic : Panel
 	{
 		currentAnimal = null;
 		Visible = false;
-		animalUI.UpdateUI();
 	}
 
 	public void OnDropButtonDown()

@@ -7,9 +7,9 @@ public partial class AnimalsUI : GridContainer
 {
 	public List<Panel> slots = new List<Panel>();
 	private List<uint> animalID = new List<uint>();
-	public List<BaseAnimal> animals = new List<BaseAnimal>();
+	public List<Animal> animals = new List<Animal>();
 
-	public void OnAnimalAdded(uint ID, BaseAnimal animal)
+	public void OnAnimalAdded(uint ID, Animal animal)
 	{
 		AddToTheList(ID, animal);
 		//slots[animalID.IndexOf(ID)].GetNode<TextureRect>("Button/TextureRect").Texture = animal.itemSprite;
@@ -35,7 +35,7 @@ public partial class AnimalsUI : GridContainer
 		slots[index].GetNode<PanelComponent>(".").animalTexture.Texture = null;
 		RemoteFromList(index);
 	}
-	public void AddToTheList(uint ID, BaseAnimal animal)
+	public void AddToTheList(uint ID, Animal animal)
 	{
 		if(!animalID.Contains(ID) && !animals.Contains(animal) && animalID.Count < 12)
 		{
@@ -49,7 +49,7 @@ public partial class AnimalsUI : GridContainer
 		animals.RemoveAt(index);
 	}
 
-	public int GetIndex(BaseAnimal animal)
+	public int GetIndex(Animal animal)
 	{
 		return animals.IndexOf(animal);
 	}

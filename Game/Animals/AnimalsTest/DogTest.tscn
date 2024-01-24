@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://73gpofn78vvg"]
+[gd_scene load_steps=12 format=3 uid="uid://73gpofn78vvg"]
 
 [ext_resource type="Script" path="res://Game/Animals/AnimalsTest/DogTest.cs" id="1_607mx"]
 [ext_resource type="PackedScene" uid="uid://ly2ynswx8k7w" path="res://Game/InteractionSystem/InteractableArea.tscn" id="2_h0x2s"]
 [ext_resource type="Script" path="res://Game/Animals/AnimalsTest/DogLogic.cs" id="2_k1ehp"]
-[ext_resource type="PackedScene" uid="uid://bmlxkkt702dhd" path="res://Game/Animals/AnimalsStats.tscn" id="2_xmdn6"]
+[ext_resource type="PackedScene" uid="uid://bmlxkkt702dhd" path="res://Game/Animals/Stats.tscn" id="2_xmdn6"]
 [ext_resource type="Texture2D" uid="uid://cbkmgd7rsg1kg" path="res://Game/Art/CatPlaceholder.png" id="3_8i8qj"]
+[ext_resource type="Script" path="res://Game/Animals/Cat/CatStats.cs" id="4_vnx1y"]
 [ext_resource type="PackedScene" uid="uid://c35idiht02vvw" path="res://Game/Commons/FSM/FSM.tscn" id="5_d36xk"]
 [ext_resource type="Script" path="res://Game/Animals/AnimalsTest/IddleTest.cs" id="6_b2sg1"]
 [ext_resource type="Script" path="res://Game/Animals/AnimalsTest/Wander.cs" id="7_27w7o"]
@@ -19,12 +20,13 @@ collision_layer = 16
 collision_mask = 2
 script = ExtResource("1_607mx")
 animalName = "Dog test"
-description = "I am a nigga"
+description = "I am a dog that has cat srpite"
 animalType = "Dog"
 itemSprite = ExtResource("3_8i8qj")
 metadata/_edit_horizontal_guides_ = [-84.0]
 
-[node name="AnimalsStats" parent="." instance=ExtResource("2_xmdn6")]
+[node name="Stats" parent="." instance=ExtResource("2_xmdn6")]
+script = ExtResource("4_vnx1y")
 
 [node name="DogLogic" type="Node2D" parent="." node_paths=PackedStringArray("FSM")]
 scale = Vector2(1.01571, 0.990937)
@@ -49,7 +51,7 @@ offset_top = -23.0
 offset_right = 24.0
 
 [node name="FSM" parent="." instance=ExtResource("5_d36xk")]
-InitialState = NodePath("Iddle")
+InitialState = NodePath("Wander")
 
 [node name="Iddle" type="Node" parent="FSM"]
 script = ExtResource("6_b2sg1")

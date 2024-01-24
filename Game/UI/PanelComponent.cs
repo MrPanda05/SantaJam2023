@@ -16,7 +16,7 @@ public partial class PanelComponent : Panel
 
 	public TextureRect animalTexture;
 
-	public BaseAnimal myAnimal;
+	public Animal myAnimal;
 
 	
 
@@ -40,16 +40,16 @@ public partial class PanelComponent : Panel
 	{
 		if(myIndex < animalsUI.animals.Count)
 		{
-			animalLabelDrop.Text = $"Drop {animalsUI.animals[myIndex].Name}?";
+			animalLabelDrop.Text = $"Drop {animalsUI.animals[myIndex].animalName}?";
 			description.Text = $"{animalsUI.animals[myIndex].description}";
 		}
 	}
-	public BaseAnimal SetAnimalOnUI()
+	public Animal SetAnimalOnUI()
 	{
 		//index >= 0 && index < array.Length
 		if(myIndex <= animalsUI.animals.Count - 1)
 		{
-			GD.Print($" I with ID: {myIndex} Sended {animalsUI.animals[myIndex].Name}");
+			GD.Print($" I with ID: {myIndex} Sended {animalsUI.animals[myIndex].animalName}");
 			return animalsUI.animals[myIndex];
 		}
 		return null;

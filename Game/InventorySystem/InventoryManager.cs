@@ -14,7 +14,7 @@ public partial class InventoryManager : Node
     public Inventory playerInventory;
 
     public static Action OnItemIncrementCount;
-    public static Action<uint, BaseAnimal> OnAddAnimal;
+    public static Action<uint, Animal> OnAddAnimal;
 
     //! Items Part
     public void AddNewItem(string itemName)
@@ -80,7 +80,7 @@ public partial class InventoryManager : Node
     }
     //! Animals Part
 
-    public void AddAnimal(uint ID, BaseAnimal animal)
+    public void AddAnimal(uint ID, Animal animal)
     {
         if(playerInventory.Animals.ContainsKey(ID)) return;
         playerInventory.Animals.Add(ID, animal);
@@ -88,7 +88,7 @@ public partial class InventoryManager : Node
         //playerInventory.UpdateItems();
     }
 
-    public BaseAnimal GetAnimal(uint ID)
+    public Animal GetAnimal(uint ID)
     {
         if(playerInventory.Animals.ContainsKey(ID))
         {
@@ -103,12 +103,12 @@ public partial class InventoryManager : Node
         playerInventory.Animals.Remove(ID);
     }
 
-    public BaseAnimal RemoveAndGetAnimal(uint ID)
+    public Animal RemoveAndGetAnimal(uint ID)
     {
         if(!playerInventory.Animals.ContainsKey(ID)) return null;
-        var test = playerInventory.Animals[ID];
+        Animal temp = playerInventory.Animals[ID];
         playerInventory.Animals.Remove(ID);
-        return test;
+        return temp;
     }
 
     public Texture2D GetItemTexture(string itemName)
