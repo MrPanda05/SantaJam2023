@@ -5,7 +5,7 @@ public partial class CatStats : AnimalStats
 {
     public override void OnTimerTimeout()
     {
-        DecreaseHunger();
+        DecreaseAllStats();
         OnStatsDown?.Invoke();
     }
     public override void _Ready()

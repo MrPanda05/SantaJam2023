@@ -8,6 +8,8 @@ public partial class Animal : CharacterBody2D
     public uint ID;
     public string animalName = "";
     public string description;
+
+    public float speed = 30;
     [Export]public string animalType;//if is a cat, dog and so on
     [Export]public Texture2D itemSprite;
 

@@ -60,11 +60,5 @@ script = ExtResource("10_g0epk")
 script = ExtResource("11_f5vpt")
 
 [node name="Timer" type="Timer" parent="FSM/Wander"]
-wait_time = 8.0
-autostart = true
 
-[node name="Timer" type="Timer" parent="FSM"]
-wait_time = 5.0
-
-[connection signal="timeout" from="FSM/Wander/Timer" to="FSM/Wander" method="OnTimerDirectionTimeout"]
-[connection signal="timeout" from="FSM/Timer" to="FSM/Wander" method="OnTimeOut"]
+[connection signal="timeout" from="FSM/Wander/Timer" to="FSM/Wander" method="OnTimerToReachTimeout"]

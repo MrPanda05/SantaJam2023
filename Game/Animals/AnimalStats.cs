@@ -24,39 +24,15 @@ public partial class AnimalStats : Node2D
     public Action OnStatsDown, OnRandomize;
 
 
-    public virtual void DecreaseHunger() 
+    public void DecreaseAllStats()
     {
-        if(ShouldChange()) return;
-        hunger -= decresseRate;
-    }
-
-    public virtual void IncreaseHunger()
-    {
-
-    }
-    public virtual void IncreaseThirst()
-    {
-
-    }
-    public virtual void DecreaseThirst()
-    {
-
-    }
-    public virtual void IncreaseSickness()
-    {
-
-    }
-    public virtual void DecreaseSickness()
-    {
-
-    }
-    public virtual void IncreaseStatmina()
-    {
-
-    }
-    public virtual void DecreaseStamina()
-    {
-
+        if(ShouldChange())
+        {
+            hunger -= decresseRate;
+            thirst -= decresseRate;
+            sickness -= decresseRate;
+            sickness -= decresseRate;
+        }
     }
     public virtual void Sleep()
     {

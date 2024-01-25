@@ -16,15 +16,17 @@ public partial class IddleState : State
         }
     }
 
-    public override void Readys()
-    {
-        proxy.myStats.OnStatsDown += StateAnimalChanger; 
-    }
     public override void Enter()
     {
         proxy.myMaster.Velocity = Vector2.Zero;
+        proxy.myStats.OnStatsDown += StateAnimalChanger; 
         //proxy.myStats.DecreaseHunger();
     }
+    public override void Exit()
+    {
+        proxy.myStats.OnStatsDown -= StateAnimalChanger; 
+    }
+
 
     public override void Update(float delta)
     {

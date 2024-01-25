@@ -3,15 +3,48 @@ using System;
 
 public partial class WanderState : State
 {
-
-    private Timer timerState, timerToDirection;
-
-    private Vector2 direction;
-
-    public bool onReach = false;
-
     public int tries = 0;
     public int maxTries = 3;
+    public bool hasReached = false;
+
+    public Vector2 myDestination;
+
+
+    private Timer timerToReach;
+    public Vector2 SetAndGetDestination()
+    {
+        myDestination = new Vector2(proxy.myMaster.GlobalPosition.X + GD.RandRange(-250, 250), proxy.myMaster.GlobalPosition.Y + GD.RandRange(-250, 250));
+        return myDestination;
+    }
+
+    public void SetRandonDestination()
+    {
+        myDestination = new Vector2(proxy.myMaster.GlobalPosition.X + GD.RandRange(-250, 250), proxy.myMaster.GlobalPosition.Y + GD.RandRange(-250, 250));
+    }
+
+    public float CalculateTimeToPoint(Vector2 point, float speed)
+    {
+        //speed = distance / time
+        //speed * time = distance
+        //time = distance / speed
+        return proxy.myMaster.GlobalPosition.DistanceTo(point) / speed;
+    }
+
+    public void TryToGoAPoint(float delta)
+    {
+        if(hasReached) return;
+        if(proxy.myMaster.GlobalPosition.IsEqualApprox(myDestination))
+        {
+            GD.Print("reached");
+            proxy.myMaster.Velocity = Vector2.Zero;
+            hasReached = true;
+            timerToReach.Stop();
+            return;
+        }
+        proxy.myMaster.GlobalPosition = proxy.myMaster.GlobalPosition.MoveToward(myDestination, delta * proxy.myAnimal.speed);
+        proxy.myMaster.MoveAndSlide();
+    }
+
     public void StateAnimalChanger()
     {
         if(proxy.myStats.hunger >= 6 && proxy.myStats.thirst >= 6 && proxy.myStats.stamina >= 6 && proxy.myStats.sickness >= 6)
@@ -23,56 +56,42 @@ public partial class WanderState : State
             }
         }
     }
-    public void GoTo(Vector2 dir, float delta)
-    {
-        if(onReach) return;
-        if(tries >= maxTries) return;
-        if(proxy.myMaster.GlobalPosition == dir)
-        {
-            GD.Print("Reached");
-            proxy.myMaster.Velocity = Vector2.Zero;
-            onReach = true;
-            return;
-        }
-        proxy.myMaster.GlobalPosition = proxy.myMaster.GlobalPosition.MoveToward(dir, delta * 30);
-        proxy.myMaster.MoveAndSlide();
-    }
 
-    public void OnTimeOut()
+    public void OnTimerToReachTimeout()
     {
-        StateAnimalChanger();
+        if(hasReached) return;
+        SetRandonDestination();
     }
-    public void OnTimerDirectionTimeout()
-    {
-        if(!onReach) return;
-        direction = new Vector2(GD.RandRange(-250, 250), GD.RandRange(-250, 250));
-        GD.Print("Going "+ direction);
-        onReach = false;
-    }
-
     public override void Readys()
     {
-        proxy.myStats.OnStatsDown += StateAnimalChanger;
-        timerState = GetNode<Timer>("../Timer"); 
-        timerToDirection = GetNode<Timer>("./Timer");
-        timerState.OneShot = false;
-        timerState.Start();
+        timerToReach = GetNode<Timer>("./Timer");
     }
     public override void Enter()
     {
-        direction = new Vector2(proxy.myMaster.GlobalPosition.X + GD.RandRange(-250, 250), proxy.myMaster.GlobalPosition.Y + GD.RandRange(-250, 250));
-        GD.Print("Going "+ direction);
+        proxy.myStats.OnStatsDown += StateAnimalChanger; 
+    }
+    public override void Exit()
+    {
+        proxy.myStats.OnStatsDown -= StateAnimalChanger; 
     }
 
     public override void FixUpdate(float delta)
     {
-        GoTo(direction, delta);
+        if(!hasReached)
+        {
+            TryToGoAPoint(delta);
+        }
+        else
+        {
+            SetRandonDestination();
+            if(timerToReach.TimeLeft < 0)
+            {
+                timerToReach.WaitTime = CalculateTimeToPoint(myDestination, proxy.myAnimal.speed);
+                timerToReach.Start();
+            }
+            hasReached = false;
+        }
     }
-    public override void Exit()
-    {
-        timerState.OneShot = true;
-    }
-
 
 
 }

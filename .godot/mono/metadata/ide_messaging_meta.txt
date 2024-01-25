@@ -1,2 +1,2 @@
-﻿62820
+﻿64819
 C:/Users/Adelar/Desktop/Uso/GODOT/Godot.exe
