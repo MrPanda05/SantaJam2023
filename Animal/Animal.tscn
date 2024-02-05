@@ -1,0 +1,55 @@
+[gd_scene load_steps=12 format=3 uid="uid://cj2gofojijhg2"]
+
+[ext_resource type="Script" path="res://Animal/Animal.cs" id="1_1an73"]
+[ext_resource type="PackedScene" uid="uid://ge7pnveqprp6" path="res://Components/HealthComponent.tscn" id="1_l3jqk"]
+[ext_resource type="PackedScene" uid="uid://bjpx2d7okpdfo" path="res://Components/HungerComponent.tscn" id="2_jfxwo"]
+[ext_resource type="PackedScene" uid="uid://rb0w3drx0wj7" path="res://Components/ThirstComponent.tscn" id="3_6h1mv"]
+[ext_resource type="PackedScene" uid="uid://dbtmvot375e07" path="res://Components/SpriteComponent.tscn" id="4_ibisj"]
+[ext_resource type="Texture2D" uid="uid://calkw2v1ta33t" path="res://Art/CatTypeIddle1.png" id="5_5vdjm"]
+[ext_resource type="Texture2D" uid="uid://gtow742wj7yr" path="res://Art/CatTypeIddle2.png" id="6_uh1im"]
+[ext_resource type="Texture2D" uid="uid://cxhpqt5djw6nv" path="res://Art/CatTypeIddle3.png" id="7_1cfr5"]
+[ext_resource type="Texture2D" uid="uid://5233hpyul37a" path="res://Art/CatTypeIddle4.png" id="8_8y5pd"]
+[ext_resource type="Script" path="res://Components/SpriteComponent.cs" id="10_jr3jo"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tpm13"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_5vdjm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_uh1im")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_1cfr5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8y5pd")
+}],
+"loop": true,
+"name": &"Iddle",
+"speed": 5.0
+}]
+
+[node name="Animal" type="Node2D"]
+script = ExtResource("1_1an73")
+
+[node name="HealthComponent" parent="." instance=ExtResource("1_l3jqk")]
+
+[node name="HungerComponent" parent="." node_paths=PackedStringArray("healthComponent") instance=ExtResource("2_jfxwo")]
+healthComponent = NodePath("../HealthComponent")
+
+[node name="ThirstComponent" parent="." node_paths=PackedStringArray("healthComponent") instance=ExtResource("3_6h1mv")]
+healthComponent = NodePath("../HealthComponent")
+
+[node name="SpriteComponent" parent="." instance=ExtResource("4_ibisj")]
+sprite_frames = SubResource("SpriteFrames_tpm13")
+animation = &"Iddle"
+frame_progress = 0.968277
+script = ExtResource("10_jr3jo")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.1
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="OnTimerTimeout"]

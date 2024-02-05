@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://rb0w3drx0wj7"]
+
+[ext_resource type="Script" path="res://Components/ThirstComponent.cs" id="1_oa5y6"]
+
+[node name="ThirstComponent" type="Node2D"]
+script = ExtResource("1_oa5y6")

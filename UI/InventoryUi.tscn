@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=3 uid="uid://bervgyo8tnjro"]
+
+[ext_resource type="Script" path="res://UI/InventoryUi.cs" id="1_l1u5q"]
+
+[node name="InventoryUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l1u5q")
+
+[node name="Food" type="Label" parent="."]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 226.0
+offset_right = 153.0
+offset_bottom = 265.0
+text = "Food:"
+
+[node name="Drink" type="Label" parent="."]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 326.0
+offset_right = 153.0
+offset_bottom = 365.0
+text = "Drinks:"
+
+[node name="Heal" type="Label" parent="."]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 426.0
+offset_right = 153.0
+offset_bottom = 465.0
+text = "Heals:"
+
+[node name="Money" type="Label" parent="."]
+layout_mode = 0
+offset_left = 983.0
+offset_top = 513.0
+offset_right = 1075.0
+offset_bottom = 541.0
+text = "M$: 0"
+horizontal_alignment = 1
+vertical_alignment = 1

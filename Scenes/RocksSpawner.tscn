@@ -1,0 +1,12 @@
+[gd_scene load_steps=5 format=3 uid="uid://cg0t7c1nnk6lo"]
+
+[ext_resource type="Script" path="res://Scenes/RocksSpawner.cs" id="1_jqxwv"]
+[ext_resource type="PackedScene" uid="uid://bk5kbakudjq6q" path="res://Scenes/Rock.tscn" id="2_rtmnf"]
+[ext_resource type="PackedScene" uid="uid://dlejnbquk0pu5" path="res://Scenes/Gold.tscn" id="3_hytxy"]
+[ext_resource type="PackedScene" uid="uid://bmjg0nccbc5qs" path="res://Scenes/Iron.tscn" id="4_qbwlu"]
+
+[node name="RocksSpawner" type="Node2D"]
+script = ExtResource("1_jqxwv")
+Rock = ExtResource("2_rtmnf")
+Gold = ExtResource("3_hytxy")
+Iron = ExtResource("4_qbwlu")

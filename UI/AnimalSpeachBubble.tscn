@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7ugvkqdqnvrw"]
+
+[ext_resource type="Script" path="res://UI/AnimalSpeachBubble.cs" id="1_1he3u"]
+
+[node name="AnimalSpeachBubble" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1he3u")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 830.0
+offset_top = 222.0
+offset_right = 1019.0
+offset_bottom = 357.0
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "sdfsdfds"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.4
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="OnTimerTimeout"]

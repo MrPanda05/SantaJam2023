@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkcqq5x1clst4"]
+
+[ext_resource type="Script" path="res://Scenes/DeathScene.cs" id="1_7eafc"]
+[ext_resource type="PackedScene" uid="uid://dp608phhdaieu" path="res://UI/DeathUi.tscn" id="1_iu1kp"]
+
+[node name="DeathScene" type="Node2D"]
+script = ExtResource("1_7eafc")
+
+[node name="DeathUI" parent="." instance=ExtResource("1_iu1kp")]
+visible = false

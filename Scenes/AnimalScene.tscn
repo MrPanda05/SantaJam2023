@@ -1,0 +1,29 @@
+[gd_scene load_steps=7 format=3 uid="uid://dp0k0ks7nhvdk"]
+
+[ext_resource type="PackedScene" uid="uid://dc445b8rc4ild" path="res://Inventory/Inventory.tscn" id="1_fdoh3"]
+[ext_resource type="PackedScene" uid="uid://cj2gofojijhg2" path="res://Animal/Animal.tscn" id="2_ymq6a"]
+[ext_resource type="PackedScene" uid="uid://5xlh7vgqmdb4" path="res://UI/AnimalUi.tscn" id="3_ggfdh"]
+[ext_resource type="PackedScene" uid="uid://b7ugvkqdqnvrw" path="res://UI/AnimalSpeachBubble.tscn" id="4_r0n3d"]
+[ext_resource type="PackedScene" uid="uid://bd2rkx1nhedw3" path="res://UI/InteractableButtons.tscn" id="5_shlrs"]
+[ext_resource type="PackedScene" uid="uid://bervgyo8tnjro" path="res://UI/InventoryUi.tscn" id="6_qnh6l"]
+
+[node name="AnimalScene" type="Node2D"]
+
+[node name="Inventory" parent="." instance=ExtResource("1_fdoh3")]
+
+[node name="Animal" parent="." instance=ExtResource("2_ymq6a")]
+position = Vector2(566, 309)
+scale = Vector2(8, 8)
+
+[node name="AnimalUI" parent="." instance=ExtResource("3_ggfdh")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="AnimalSpeachBubble" parent="." instance=ExtResource("4_r0n3d")]
+
+[node name="Interactable Buttons" parent="." instance=ExtResource("5_shlrs")]
+
+[node name="InventoryUI" parent="." instance=ExtResource("6_qnh6l")]

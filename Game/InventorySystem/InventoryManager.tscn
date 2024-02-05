@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bmabexrkx0xlf"]
-
-[ext_resource type="Script" path="res://Game/InventorySystem/InventoryManager.cs" id="1_x4bx3"]
-
-[node name="InventoryManager" type="Node"]
-script = ExtResource("1_x4bx3")

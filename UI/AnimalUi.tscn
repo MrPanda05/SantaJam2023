@@ -1,0 +1,48 @@
+[gd_scene load_steps=2 format=3 uid="uid://5xlh7vgqmdb4"]
+
+[ext_resource type="Script" path="res://UI/AnimalUi.cs" id="1_pamc4"]
+
+[node name="AnimalUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pamc4")
+
+[node name="HealthLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 240.0
+offset_top = 51.0
+offset_right = 340.0
+offset_bottom = 101.0
+text = "Health:
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ThirstLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 540.0
+offset_top = 51.0
+offset_right = 640.0
+offset_bottom = 101.0
+text = "Thirst:
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HungerLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 840.0
+offset_top = 51.0
+offset_right = 940.0
+offset_bottom = 101.0
+text = "Hunger:
+"
+horizontal_alignment = 1
+vertical_alignment = 1

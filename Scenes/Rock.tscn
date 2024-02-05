@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://bk5kbakudjq6q"]
+
+[ext_resource type="Script" path="res://Scenes/Rock.cs" id="1_4dj3e"]
+[ext_resource type="PackedScene" uid="uid://dbtmvot375e07" path="res://Components/SpriteComponent.tscn" id="1_sfjn6"]
+[ext_resource type="Texture2D" uid="uid://q7i5l8citrng" path="res://Art/Rock.png" id="2_rqykl"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a4i3o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rqykl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iqf7c"]
+size = Vector2(41, 26)
+
+[node name="Rock" type="Node2D"]
+script = ExtResource("1_4dj3e")
+
+[node name="SpriteComponent" parent="." instance=ExtResource("1_sfjn6")]
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_a4i3o")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(2.5, 4)
+shape = SubResource("RectangleShape2D_iqf7c")
+
+[connection signal="mouse_entered" from="Area2D" to="." method="OnArea2dMouseEntered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="OnArea2dMouseExited"]

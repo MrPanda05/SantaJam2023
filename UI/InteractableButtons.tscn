@@ -1,0 +1,117 @@
+[gd_scene load_steps=2 format=3 uid="uid://bd2rkx1nhedw3"]
+
+[ext_resource type="Script" path="res://UI/InteractableButtons.cs" id="1_t7qu3"]
+
+[node name="Interactable Buttons" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t7qu3")
+
+[node name="Feed" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 436.0
+offset_top = 564.0
+offset_right = 508.0
+offset_bottom = 603.0
+
+[node name="Label" type="Label" parent="Feed"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "FEED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Drink" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 541.0
+offset_top = 564.0
+offset_right = 613.0
+offset_bottom = 603.0
+
+[node name="Label" type="Label" parent="Drink"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "DRINK"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Heal" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 646.0
+offset_top = 564.0
+offset_right = 718.0
+offset_bottom = 603.0
+
+[node name="Label" type="Label" parent="Heal"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "HEAL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Work" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1038.0
+offset_top = 558.0
+offset_right = 1112.0
+offset_bottom = 600.0
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Work"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "WORK"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Shop" type="Button" parent="."]
+layout_mode = 0
+offset_left = 950.0
+offset_top = 558.0
+offset_right = 1024.0
+offset_bottom = 600.0
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Shop"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "SHOP"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="button_down" from="Feed" to="." method="OnFeedButtonDown"]
+[connection signal="button_down" from="Drink" to="." method="OnDrinkButtonDown"]
+[connection signal="button_down" from="Heal" to="." method="OnHealButtonDown"]
+[connection signal="button_down" from="Work" to="." method="OnWorkButtonDown"]
+[connection signal="button_down" from="Shop" to="." method="OnShopButtonDown"]
