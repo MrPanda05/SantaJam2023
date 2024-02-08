@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://dp608phhdaieu"]
+[gd_scene load_steps=2 format=3 uid="uid://dp608phhdaieu"]
+
+[ext_resource type="Script" path="res://UI/DeathUi.cs" id="1_u8gbi"]
 
 [node name="DeathUI" type="Control"]
 process_mode = 3
@@ -8,3 +10,34 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_u8gbi")
+
+[node name="Death" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 517.0
+offset_top = 84.0
+offset_right = 635.0
+offset_bottom = 110.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 75
+text = "YOUR PET DIED"
+
+[node name="Restart" type="Button" parent="."]
+layout_mode = 0
+offset_left = 259.0
+offset_top = 480.0
+offset_right = 522.0
+offset_bottom = 555.0
+text = "RESTART"
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 668.0
+offset_top = 480.0
+offset_right = 931.0
+offset_bottom = 555.0
+text = "QUIT"
+
+[connection signal="button_down" from="Restart" to="." method="OnRestartButtonDown"]
+[connection signal="button_down" from="Quit" to="." method="OnQuitButtonDown"]

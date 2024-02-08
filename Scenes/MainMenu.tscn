@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://gkpimqpsfawq"]
+
+[ext_resource type="Script" path="res://Scenes/MainMenu.cs" id="1_dlkkv"]
+[ext_resource type="PackedScene" uid="uid://cuuo6bh3pl0nf" path="res://UI/MainMenuUi.tscn" id="1_lup7a"]
+[ext_resource type="PackedScene" uid="uid://fx5awx6yjsfc" path="res://UI/SettingsUi.tscn" id="3_q5gto"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_dlkkv")
+
+[node name="MainMenuUI" parent="." instance=ExtResource("1_lup7a")]
+
+[node name="SettingsUI" parent="." instance=ExtResource("3_q5gto")]
+visible = false

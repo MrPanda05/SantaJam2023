@@ -9,8 +9,17 @@ public partial class WorkUI : Control
 	public Inventory inventory;
 
 	public Label rockLabel, goldLabel, ironLabel, moneyLabel;
+	
+	[Export] public AudioStreamPlayer sellSFX;
 
 	public Animal animal;
+
+	public void PlaySound()
+	{
+		if(sellSFX.Playing) return;
+
+		sellSFX.Play();
+	}
 	public void OnUpdateLabels()
 	{
 		rockLabel.Text = $"Rock: {spawner.rockCount}";
@@ -19,27 +28,33 @@ public partial class WorkUI : Control
 	}
 	public void OnSellRockButtonDown()
 	{
+		if(spawner.rockCount <= 0) return;
 		int moneyTemp = spawner.rockCount * 4;
 		spawner.rockCount = 0;
 		inventory.AddMoney(moneyTemp);
 		UpdateMoneyLable();
 		OnUpdateLabels();
+		PlaySound();
 	}
 	public void OnSellIronButtonDown()
 	{
+		if(spawner.ironCount <= 0) return;
 		int moneyTemp = spawner.ironCount * 8;
 		spawner.ironCount = 0;
 		inventory.AddMoney(moneyTemp);
 		UpdateMoneyLable();
 		OnUpdateLabels();
+		PlaySound();
 	}
 	public void OnSellGoldButtonDown()
 	{
+		if(spawner.goldCount <= 0) return;
 		int moneyTemp = spawner.goldCount * 20;
 		spawner.goldCount = 0;
 		inventory.AddMoney(moneyTemp);
 		UpdateMoneyLable();
 		OnUpdateLabels();
+		PlaySound();
 	}
 	public void OnSellAllButtonDown()
 	{

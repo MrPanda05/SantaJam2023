@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dlhplflovan65"]
+[gd_scene load_steps=5 format=3 uid="uid://dlhplflovan65"]
 
 [ext_resource type="PackedScene" uid="uid://dp0k0ks7nhvdk" path="res://Scenes/AnimalScene.tscn" id="1_ks7dy"]
 [ext_resource type="PackedScene" uid="uid://cu77jtuocoe86" path="res://Scenes/Store.tscn" id="2_y4vny"]
 [ext_resource type="PackedScene" uid="uid://dwguasin4es3u" path="res://Scenes/Work.tscn" id="3_4i558"]
+[ext_resource type="PackedScene" uid="uid://dkcqq5x1clst4" path="res://Scenes/DeathScene.tscn" id="4_atunq"]
 
 [node name="MainScene" type="Node2D"]
 
@@ -13,3 +14,5 @@ visible = false
 
 [node name="Work" parent="." instance=ExtResource("3_4i558")]
 visible = false
+
+[node name="DeathScene" parent="." instance=ExtResource("4_atunq")]

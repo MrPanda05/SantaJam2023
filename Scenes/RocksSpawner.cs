@@ -15,6 +15,8 @@ public partial class RocksSpawner : Node2D
 
     private uint temp;
 
+    
+
     public void OnSpawnTimerTimeout()
     {
         //Spawn area

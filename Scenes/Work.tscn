@@ -1,17 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://dwguasin4es3u"]
+[gd_scene load_steps=4 format=3 uid="uid://dwguasin4es3u"]
 
 [ext_resource type="Script" path="res://UI/WorkUI.cs" id="1_2u6yf"]
+[ext_resource type="AudioStream" uid="uid://bphht2byy8fgu" path="res://Sounds/moneySFX.mp3" id="2_h5wpn"]
 [ext_resource type="PackedScene" uid="uid://dlrh4p6062ygw" path="res://Scenes/Mining.tscn" id="2_tw5b1"]
 
 [node name="Work" type="Node2D"]
 
-[node name="WorkUI" type="Control" parent="."]
+[node name="WorkUI" type="Control" parent="." node_paths=PackedStringArray("sellSFX")]
 layout_mode = 3
 anchors_preset = 0
 offset_top = -2.0
 offset_right = 1152.0
 offset_bottom = 646.0
 script = ExtResource("1_2u6yf")
+sellSFX = NodePath("SellSFX")
 
 [node name="Stop" type="Button" parent="WorkUI"]
 layout_mode = 0
@@ -88,6 +90,10 @@ offset_top = 516.0
 offset_right = 1099.0
 offset_bottom = 539.0
 text = "M$: 0"
+
+[node name="SellSFX" type="AudioStreamPlayer" parent="WorkUI"]
+stream = ExtResource("2_h5wpn")
+bus = &"SoundFX"
 
 [node name="Mining" parent="." instance=ExtResource("2_tw5b1")]
 

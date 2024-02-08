@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bg8mgasp7btwx"]
+[gd_scene load_steps=4 format=3 uid="uid://bg8mgasp7btwx"]
 
 [ext_resource type="Script" path="res://UI/StoreUi.cs" id="1_o6vrk"]
 [ext_resource type="Script" path="res://UI/IndieStoreItems.cs" id="2_u5vgr"]
+[ext_resource type="AudioStream" uid="uid://cabmv2oxalrjb" path="res://Sounds/buyingSFX.mp3" id="3_fqxa5"]
 
 [node name="StoreUI" type="Control"]
 layout_mode = 3
@@ -408,6 +409,9 @@ offset_top = 0.00499725
 grow_horizontal = 2
 grow_vertical = 2
 text = "BUY"
+
+[node name="BuyingSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_fqxa5")
 
 [connection signal="button_down" from="Return" to="." method="OnReturnButtonDown"]
 [connection signal="button_down" from="UpgradesStore/Upgrades/Buy" to="UpgradesStore/Upgrades" method="OnBuyButtonDown"]

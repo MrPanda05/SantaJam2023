@@ -6,6 +6,7 @@ public partial class Rock : Node2D
 
     public RocksSpawner spawnner;
     public bool canBeMined = false;
+
     public void OnArea2dMouseEntered()
     {
         canBeMined = true;

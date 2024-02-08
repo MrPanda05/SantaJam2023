@@ -9,6 +9,7 @@ public partial class StoreUi : Control
 	private Inventory inventory;
 	public Label moneyLabel;
 
+
 	public void OnReturnButtonDown()
 	{	
 		AnimalScene.Visible = true;

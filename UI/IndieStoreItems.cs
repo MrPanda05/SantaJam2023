@@ -12,6 +12,9 @@ public partial class IndieStoreItems : Panel
 
 	public uint count = 0;
 	private Inventory inventory;
+	
+	public AudioStreamPlayer buySFX;
+	
 	// 0 - food
 	// 1 - drink
 	// 2 - health
@@ -38,6 +41,7 @@ public partial class IndieStoreItems : Panel
 	}
     public override void _Ready()
     {
+		buySFX = GetNode<AudioStreamPlayer>("../../BuyingSFX");
 		nameLabel = GetNode<Label>("Name");
 		priceLabel = GetNode<Label>("Price");
 		countLabel = GetNode<Label>("Count");
@@ -68,6 +72,7 @@ public partial class IndieStoreItems : Panel
 		{
 			inventory.RemoveMoney(price);
 			inventory.AddFood();
+			buySFX.Play();
 		}
 	}
 	public void AddDrink()
@@ -76,6 +81,7 @@ public partial class IndieStoreItems : Panel
 		{
 			inventory.RemoveMoney(price);
 			inventory.AddDrinks();
+			buySFX.Play();
 		}
 	}
 	public void AddHealth()
@@ -84,6 +90,7 @@ public partial class IndieStoreItems : Panel
 		{
 			inventory.RemoveMoney(price);
 			inventory.AddHeals();
+			buySFX.Play();
 		}
 	}
 	public void UpgradeHealthFactor()
@@ -93,6 +100,7 @@ public partial class IndieStoreItems : Panel
 			inventory.RemoveMoney(price);
 			inventory.healingFactor += 2f;
 			count++;
+			buySFX.Play();
 		}
 	}
 	public void UpgradeDrinkFactor()
@@ -102,6 +110,7 @@ public partial class IndieStoreItems : Panel
 			inventory.RemoveMoney(price);
 			inventory.drinkUpFactor += 2f;
 			count++;
+			buySFX.Play();
 		}
 	}
 	public void UpgradeFoodFactor()
@@ -111,6 +120,8 @@ public partial class IndieStoreItems : Panel
 			inventory.RemoveMoney(price);
 			inventory.foodEatFactor += 2f;
 			count++;
+			buySFX.Play();
+
 		}
 	}
 	public void OnBuyButtonDown()

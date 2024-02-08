@@ -21,10 +21,10 @@ public partial class DeathScene : Node2D
 
     public override void _Ready()
     {
-        animal = GetNode<Animal>("../../AnimalScene/Animal");
-        AnimalScene = GetNode<Node2D>("../../AnimalScene");
-        WorkScene = GetNode<Node2D>("../../Work");
-        ShopScene = GetNode<Node2D>("../../Store");
+        animal = GetNode<Animal>("../AnimalScene/Animal");
+        AnimalScene = GetNode<Node2D>("../AnimalScene");
+        WorkScene = GetNode<Node2D>("../Work");
+        ShopScene = GetNode<Node2D>("../Store");
         DeathUI = GetNode<Control>("DeathUI");
         animal.healthComponent.OnDeath += Death;
         

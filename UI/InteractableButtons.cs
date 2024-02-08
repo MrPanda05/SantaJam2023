@@ -7,7 +7,8 @@ public partial class InteractableButtons : Control
 	public Inventory inventory;
 
 	public Node2D AnimalScene, ShopScene, WorkScene;
-	
+
+	[Export] public AudioStreamPlayer healSFX, eatSFX, drinkSFX, failHealSFX, failEatSFX, failDrinkSFX;
 	public void OnFeedButtonDown()
 	{
 		if(inventory.foodAmount > 0)
@@ -16,9 +17,11 @@ public partial class InteractableButtons : Control
 			animal.OnStatsChange?.Invoke();
 			inventory.RemoveFood();
 			GD.Print("Got fed");
+			eatSFX.Play();
 			return;
 		}
 			GD.Print("Not enought food");
+			failEatSFX?.Play();
 	}
 	public void OnDrinkButtonDown()
 	{
@@ -28,9 +31,11 @@ public partial class InteractableButtons : Control
 			animal.OnStatsChange?.Invoke();
 			inventory.RemoveDrink();
 			GD.Print("hmmm hydration");
+			drinkSFX.Play();
 			return;
 		}
 			GD.Print("Not enought hydration product");
+			failDrinkSFX?.Play();
 	}
 	public void OnHealButtonDown()
 	{
@@ -40,9 +45,11 @@ public partial class InteractableButtons : Control
 			animal.OnStatsChange?.Invoke();
 			inventory.RemoveHeal();
 			GD.Print("hmmm got heal");
+			healSFX.Play();
 			return;
 		}
 			GD.Print("Not enought healing items");
+			failHealSFX?.Play();
 	}
 
 	public void OnWorkButtonDown()
@@ -53,15 +60,7 @@ public partial class InteractableButtons : Control
 	}
 	public void OnShopButtonDown()
 	{
-		// if(inventory.money <= 0)
-		// {
-		// 	GD.Print("Poor");
-		// 	return;
-		// }
-		// inventory.RemoveMoney(5);
-		// inventory.AddDrinks();
-		// inventory.AddFood();
-		// inventory.AddHeals();
+		
 		ShopScene.Visible = true;
 		AnimalScene.Visible = false;
 		animal.timer.WaitTime = 6f;

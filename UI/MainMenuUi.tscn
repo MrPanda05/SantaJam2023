@@ -1,0 +1,60 @@
+[gd_scene load_steps=3 format=3 uid="uid://cuuo6bh3pl0nf"]
+
+[ext_resource type="Script" path="res://UI/MainMenuUi.cs" id="1_6b8fr"]
+[ext_resource type="Theme" uid="uid://7jjm7u24idj" path="res://UI/ButtonTheme.tres" id="2_xlnkl"]
+
+[node name="MainMenuUI" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = -1.0
+offset_right = 30.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6b8fr")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+offset_left = -298.0
+offset_top = -160.0
+offset_right = 1443.0
+offset_bottom = 944.0
+color = Color(0.152941, 0.00784314, 0.25098, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 556.0
+offset_top = 137.0
+offset_right = 596.0
+offset_bottom = 163.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 75
+text = "THIS CAT NEEDS FOOD TWO!"
+
+[node name="SettingsButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 690.0
+offset_top = 470.0
+offset_right = 922.0
+offset_bottom = 542.0
+theme = ExtResource("2_xlnkl")
+text = "Settings
+"
+
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 172.0
+offset_top = 470.0
+offset_right = 404.0
+offset_bottom = 542.0
+theme = ExtResource("2_xlnkl")
+text = "START"
+
+[connection signal="button_down" from="SettingsButton" to="." method="OnSettingsButtonButtonDown"]
+[connection signal="button_down" from="StartButton" to="." method="OnStartButtonButtonDown"]

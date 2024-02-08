@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://bd2rkx1nhedw3"]
+[gd_scene load_steps=5 format=3 uid="uid://bd2rkx1nhedw3"]
 
 [ext_resource type="Script" path="res://UI/InteractableButtons.cs" id="1_t7qu3"]
+[ext_resource type="AudioStream" uid="uid://db4hfy34ab8pc" path="res://Sounds/Half Life Medkit Sound Effect.mp3" id="2_21o77"]
+[ext_resource type="AudioStream" uid="uid://d0d3flbr2nxvo" path="res://Sounds/eatingSFX.mp3" id="3_tbk64"]
+[ext_resource type="AudioStream" uid="uid://c3waat31n4wlu" path="res://Sounds/drinksSFX.mp3" id="4_42c30"]
 
-[node name="Interactable Buttons" type="Control"]
+[node name="Interactable Buttons" type="Control" node_paths=PackedStringArray("healSFX", "eatSFX", "drinkSFX")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,6 +13,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_t7qu3")
+healSFX = NodePath("HealSFX")
+eatSFX = NodePath("EatSFX")
+drinkSFX = NodePath("DrinkSFX")
 
 [node name="Feed" type="Button" parent="."]
 layout_mode = 1
@@ -109,6 +115,18 @@ grow_vertical = 2
 text = "SHOP"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="HealSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_21o77")
+bus = &"SoundFX"
+
+[node name="EatSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_tbk64")
+bus = &"SoundFX"
+
+[node name="DrinkSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_42c30")
+bus = &"SoundFX"
 
 [connection signal="button_down" from="Feed" to="." method="OnFeedButtonDown"]
 [connection signal="button_down" from="Drink" to="." method="OnDrinkButtonDown"]
