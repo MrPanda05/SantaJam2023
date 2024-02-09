@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dp608phhdaieu"]
+[gd_scene load_steps=3 format=3 uid="uid://dp608phhdaieu"]
 
 [ext_resource type="Script" path="res://UI/DeathUi.cs" id="1_u8gbi"]
+[ext_resource type="Theme" uid="uid://7jjm7u24idj" path="res://UI/ButtonTheme.tres" id="2_3qlti"]
 
 [node name="DeathUI" type="Control"]
 process_mode = 3
@@ -11,6 +12,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_u8gbi")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -630.0
+offset_top = -382.0
+offset_right = 1832.0
+offset_bottom = 1106.0
+color = Color(0.0156863, 0, 0.258824, 1)
 
 [node name="Death" type="Label" parent="."]
 layout_mode = 1
@@ -29,6 +38,7 @@ offset_left = 259.0
 offset_top = 480.0
 offset_right = 522.0
 offset_bottom = 555.0
+theme = ExtResource("2_3qlti")
 text = "RESTART"
 
 [node name="Quit" type="Button" parent="."]
@@ -37,6 +47,7 @@ offset_left = 668.0
 offset_top = 480.0
 offset_right = 931.0
 offset_bottom = 555.0
+theme = ExtResource("2_3qlti")
 text = "QUIT"
 
 [connection signal="button_down" from="Restart" to="." method="OnRestartButtonDown"]

@@ -1,34 +1,116 @@
-[gd_scene load_steps=12 format=3 uid="uid://cj2gofojijhg2"]
+[gd_scene load_steps=30 format=3 uid="uid://cj2gofojijhg2"]
 
 [ext_resource type="Script" path="res://Animal/Animal.cs" id="1_1an73"]
 [ext_resource type="PackedScene" uid="uid://ge7pnveqprp6" path="res://Components/HealthComponent.tscn" id="1_l3jqk"]
 [ext_resource type="PackedScene" uid="uid://bjpx2d7okpdfo" path="res://Components/HungerComponent.tscn" id="2_jfxwo"]
 [ext_resource type="PackedScene" uid="uid://rb0w3drx0wj7" path="res://Components/ThirstComponent.tscn" id="3_6h1mv"]
 [ext_resource type="PackedScene" uid="uid://dbtmvot375e07" path="res://Components/SpriteComponent.tscn" id="4_ibisj"]
-[ext_resource type="Texture2D" uid="uid://calkw2v1ta33t" path="res://Art/CatTypeIddle1.png" id="5_5vdjm"]
-[ext_resource type="Texture2D" uid="uid://gtow742wj7yr" path="res://Art/CatTypeIddle2.png" id="6_uh1im"]
-[ext_resource type="Texture2D" uid="uid://cxhpqt5djw6nv" path="res://Art/CatTypeIddle3.png" id="7_1cfr5"]
-[ext_resource type="Texture2D" uid="uid://5233hpyul37a" path="res://Art/CatTypeIddle4.png" id="8_8y5pd"]
+[ext_resource type="Texture2D" uid="uid://dretxrxdlqwec" path="res://Art/CatIddleType1-1.png" id="6_kaihm"]
+[ext_resource type="Texture2D" uid="uid://c7k0hm8ktchut" path="res://Art/CatIddleType1-2.png" id="7_1r8x3"]
+[ext_resource type="Texture2D" uid="uid://dx7m24kxmioug" path="res://Art/CatIddleType1-3.png" id="8_utwra"]
+[ext_resource type="Texture2D" uid="uid://c0wyale23vboq" path="res://Art/CatIddleType1-4.png" id="9_rajve"]
+[ext_resource type="Texture2D" uid="uid://d11m4w10nlb52" path="res://Art/CatIddleType1-5.png" id="10_jgrjl"]
 [ext_resource type="Script" path="res://Components/SpriteComponent.cs" id="10_jr3jo"]
+[ext_resource type="Texture2D" uid="uid://bbgojpyri4bnd" path="res://Art/CatIddleType1-6.png" id="11_5ydf6"]
+[ext_resource type="Texture2D" uid="uid://plkfvxfyo5jc" path="res://Art/CatIddleType1-7.png" id="12_k2eqq"]
+[ext_resource type="Texture2D" uid="uid://2lc3wrdn5cvv" path="res://Art/CatIddleType2-1.png" id="13_kjnrv"]
+[ext_resource type="Texture2D" uid="uid://dptwkipwwye44" path="res://Art/CatIddleType2-2.png" id="14_efw8h"]
+[ext_resource type="Texture2D" uid="uid://wb50kwrni4dn" path="res://Art/CatIddleType2-3.png" id="15_d7455"]
+[ext_resource type="Texture2D" uid="uid://btr3jotoprfjc" path="res://Art/CatIddleType2-4.png" id="16_aj87c"]
+[ext_resource type="Texture2D" uid="uid://cai6f2br25fvr" path="res://Art/CatIddleType2-5.png" id="17_8q5fg"]
+[ext_resource type="Texture2D" uid="uid://eqciyniblisg" path="res://Art/CatIddleType2-6.png" id="18_vmh7e"]
+[ext_resource type="Texture2D" uid="uid://cmbsv0feqdpfp" path="res://Art/CatIddleType2-7.png" id="19_qckxw"]
+[ext_resource type="Texture2D" uid="uid://b1453acceq61i" path="res://Art/CatIddleType3-1.png" id="20_hinny"]
+[ext_resource type="Texture2D" uid="uid://cktiin61x85q1" path="res://Art/CatIddleType3-2.png" id="21_ee7ke"]
+[ext_resource type="Texture2D" uid="uid://cfaijjfm7e8d6" path="res://Art/CatIddleType3-3.png" id="22_h13dv"]
+[ext_resource type="Texture2D" uid="uid://23qdqh1p5txy" path="res://Art/CatIddleType3-4.png" id="23_12hqk"]
+[ext_resource type="Texture2D" uid="uid://dwwkt2nhr8nhg" path="res://Art/CatIddleType3-5.png" id="24_firar"]
+[ext_resource type="Texture2D" uid="uid://bj7euv0wwbhbf" path="res://Art/CatIddleType3-6.png" id="25_l5cvi"]
+[ext_resource type="Texture2D" uid="uid://8umosspcba63" path="res://Art/CatIddleType3-7.png" id="26_4cbiq"]
+[ext_resource type="Texture2D" uid="uid://dkqhui08pkt0r" path="res://Art/CatIddleType3-8.png" id="27_qblco"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tpm13"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_5vdjm")
+"texture": ExtResource("6_kaihm")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_uh1im")
+"texture": ExtResource("7_1r8x3")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_1cfr5")
+"texture": ExtResource("8_utwra")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_8y5pd")
+"texture": ExtResource("9_rajve")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_jgrjl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_5ydf6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_k2eqq")
 }],
 "loop": true,
-"name": &"Iddle",
+"name": &"IddleType1",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_kjnrv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_efw8h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_d7455")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_aj87c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_8q5fg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_vmh7e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_qckxw")
+}],
+"loop": true,
+"name": &"IddleType2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_hinny")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_ee7ke")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_h13dv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_12hqk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_firar")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_l5cvi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_4cbiq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_qblco")
+}],
+"loop": true,
+"name": &"IddleType3",
+"speed": 4.0
 }]
 
 [node name="Animal" type="Node2D"]
@@ -44,12 +126,18 @@ healthComponent = NodePath("../HealthComponent")
 
 [node name="SpriteComponent" parent="." instance=ExtResource("4_ibisj")]
 sprite_frames = SubResource("SpriteFrames_tpm13")
-animation = &"Iddle"
-frame_progress = 0.968277
+animation = &"IddleType1"
+autoplay = "IddleType1"
 script = ExtResource("10_jr3jo")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.1
 autostart = true
 
+[node name="Anim" type="Timer" parent="."]
+wait_time = 8.0
+autostart = true
+
+[connection signal="animation_finished" from="SpriteComponent" to="SpriteComponent" method="OnAnimationFinished"]
 [connection signal="timeout" from="Timer" to="." method="OnTimerTimeout"]
+[connection signal="timeout" from="Anim" to="SpriteComponent" method="OnAnimTimeout"]

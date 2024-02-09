@@ -1,13 +1,13 @@
+Timer
+ColorRect
+Label
 HSlider
 TextureProgressBar
-ColorRect
 AudioStreamPlayer
 Button
-Label
 Marker2D
 CollisionShape2D
 Area2D
-Timer
 Control
 Panel
 HBoxContainer

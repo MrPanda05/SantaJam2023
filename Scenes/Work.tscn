@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://dwguasin4es3u"]
+[gd_scene load_steps=6 format=3 uid="uid://dwguasin4es3u"]
 
 [ext_resource type="Script" path="res://UI/WorkUI.cs" id="1_2u6yf"]
 [ext_resource type="AudioStream" uid="uid://bphht2byy8fgu" path="res://Sounds/moneySFX.mp3" id="2_h5wpn"]
 [ext_resource type="PackedScene" uid="uid://dlrh4p6062ygw" path="res://Scenes/Mining.tscn" id="2_tw5b1"]
+[ext_resource type="Theme" uid="uid://dqc1y40snnfiv" path="res://UI/ButtonsTheme2OO.tres" id="3_eap2c"]
+[ext_resource type="Theme" uid="uid://7jjm7u24idj" path="res://UI/ButtonTheme.tres" id="4_55hvq"]
 
 [node name="Work" type="Node2D"]
+
+[node name="Mining" parent="." instance=ExtResource("2_tw5b1")]
 
 [node name="WorkUI" type="Control" parent="." node_paths=PackedStringArray("sellSFX")]
 layout_mode = 3
@@ -21,6 +25,7 @@ offset_left = 1025.0
 offset_top = 551.0
 offset_right = 1135.0
 offset_bottom = 618.0
+theme = ExtResource("3_eap2c")
 text = "Stop working"
 
 [node name="SellRock" type="Button" parent="WorkUI"]
@@ -29,6 +34,7 @@ offset_left = 389.0
 offset_top = 524.0
 offset_right = 473.0
 offset_bottom = 593.0
+theme = ExtResource("4_55hvq")
 text = "Sell
 Rock"
 
@@ -38,6 +44,7 @@ offset_left = 519.0
 offset_top = 524.0
 offset_right = 603.0
 offset_bottom = 593.0
+theme = ExtResource("4_55hvq")
 text = "Sell
 Iron"
 
@@ -47,6 +54,7 @@ offset_left = 649.0
 offset_top = 524.0
 offset_right = 733.0
 offset_bottom = 593.0
+theme = ExtResource("4_55hvq")
 text = "Sell
 Gold"
 
@@ -56,6 +64,7 @@ offset_left = 779.0
 offset_top = 524.0
 offset_right = 863.0
 offset_bottom = 593.0
+theme = ExtResource("4_55hvq")
 text = "Sell
 All"
 
@@ -94,8 +103,6 @@ text = "M$: 0"
 [node name="SellSFX" type="AudioStreamPlayer" parent="WorkUI"]
 stream = ExtResource("2_h5wpn")
 bus = &"SoundFX"
-
-[node name="Mining" parent="." instance=ExtResource("2_tw5b1")]
 
 [connection signal="button_down" from="WorkUI/Stop" to="WorkUI" method="OnStopButtonDown"]
 [connection signal="button_down" from="WorkUI/SellRock" to="WorkUI" method="OnSellRockButtonDown"]

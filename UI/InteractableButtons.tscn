@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://bd2rkx1nhedw3"]
+[gd_scene load_steps=8 format=3 uid="uid://bd2rkx1nhedw3"]
 
 [ext_resource type="Script" path="res://UI/InteractableButtons.cs" id="1_t7qu3"]
 [ext_resource type="AudioStream" uid="uid://db4hfy34ab8pc" path="res://Sounds/Half Life Medkit Sound Effect.mp3" id="2_21o77"]
+[ext_resource type="Theme" uid="uid://7jjm7u24idj" path="res://UI/ButtonTheme.tres" id="2_pg81g"]
 [ext_resource type="AudioStream" uid="uid://d0d3flbr2nxvo" path="res://Sounds/eatingSFX.mp3" id="3_tbk64"]
+[ext_resource type="Theme" uid="uid://bvn1x8isii0dk" path="res://UI/LabelTheme.tres" id="3_ugvvh"]
 [ext_resource type="AudioStream" uid="uid://c3waat31n4wlu" path="res://Sounds/drinksSFX.mp3" id="4_42c30"]
+[ext_resource type="Theme" uid="uid://dqc1y40snnfiv" path="res://UI/ButtonsTheme2OO.tres" id="4_f6v7v"]
 
 [node name="Interactable Buttons" type="Control" node_paths=PackedStringArray("healSFX", "eatSFX", "drinkSFX")]
 layout_mode = 3
@@ -24,14 +27,20 @@ offset_left = 436.0
 offset_top = 564.0
 offset_right = 508.0
 offset_bottom = 603.0
+theme = ExtResource("2_pg81g")
 
 [node name="Label" type="Label" parent="Feed"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -6.0
+offset_right = 1.0
+offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("3_ugvvh")
 text = "FEED"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -43,14 +52,18 @@ offset_left = 541.0
 offset_top = 564.0
 offset_right = 613.0
 offset_bottom = 603.0
+theme = ExtResource("2_pg81g")
 
 [node name="Label" type="Label" parent="Drink"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -6.0
+offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("3_ugvvh")
 text = "DRINK"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -62,14 +75,18 @@ offset_left = 646.0
 offset_top = 564.0
 offset_right = 718.0
 offset_bottom = 603.0
+theme = ExtResource("2_pg81g")
 
 [node name="Label" type="Label" parent="Heal"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -6.0
+offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("3_ugvvh")
 text = "HEAL"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -80,20 +97,9 @@ offset_left = 1038.0
 offset_top = 558.0
 offset_right = 1112.0
 offset_bottom = 600.0
-metadata/_edit_group_ = true
-
-[node name="Label" type="Label" parent="Work"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -1.0
-offset_bottom = 2.0
-grow_horizontal = 2
-grow_vertical = 2
+theme = ExtResource("4_f6v7v")
 text = "WORK"
-horizontal_alignment = 1
-vertical_alignment = 1
+metadata/_edit_group_ = true
 
 [node name="Shop" type="Button" parent="."]
 layout_mode = 0
@@ -101,31 +107,23 @@ offset_left = 950.0
 offset_top = 558.0
 offset_right = 1024.0
 offset_bottom = 600.0
-metadata/_edit_group_ = true
-
-[node name="Label" type="Label" parent="Shop"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -1.0
-offset_bottom = 2.0
-grow_horizontal = 2
-grow_vertical = 2
+theme = ExtResource("4_f6v7v")
 text = "SHOP"
-horizontal_alignment = 1
-vertical_alignment = 1
+metadata/_edit_group_ = true
 
 [node name="HealSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_21o77")
+volume_db = -10.0
 bus = &"SoundFX"
 
 [node name="EatSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_tbk64")
+volume_db = -5.0
 bus = &"SoundFX"
 
 [node name="DrinkSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_42c30")
+volume_db = -5.0
 bus = &"SoundFX"
 
 [connection signal="button_down" from="Feed" to="." method="OnFeedButtonDown"]

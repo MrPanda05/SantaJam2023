@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://bg8mgasp7btwx"]
+[gd_scene load_steps=7 format=3 uid="uid://bg8mgasp7btwx"]
 
 [ext_resource type="Script" path="res://UI/StoreUi.cs" id="1_o6vrk"]
+[ext_resource type="Theme" uid="uid://dqc1y40snnfiv" path="res://UI/ButtonsTheme2OO.tres" id="2_1301v"]
 [ext_resource type="Script" path="res://UI/IndieStoreItems.cs" id="2_u5vgr"]
+[ext_resource type="Theme" uid="uid://bm6sy6kdy4f2a" path="res://UI/ITEMTheme.tres" id="3_2d7am"]
 [ext_resource type="AudioStream" uid="uid://cabmv2oxalrjb" path="res://Sounds/buyingSFX.mp3" id="3_fqxa5"]
+[ext_resource type="Theme" uid="uid://mhq8kngakxre" path="res://UI/ShopButton.tres" id="4_rcivw"]
 
 [node name="StoreUI" type="Control"]
 layout_mode = 3
@@ -13,22 +16,31 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_o6vrk")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -341.0
+offset_top = -272.0
+offset_right = 1591.0
+offset_bottom = 965.0
+color = Color(0.0745098, 0.141176, 0.054902, 1)
+
 [node name="MoneyLabel" type="Label" parent="."]
 layout_mode = 0
-offset_left = 932.0
-offset_top = 144.0
-offset_right = 1069.0
-offset_bottom = 244.0
+offset_left = 964.0
+offset_top = 360.0
+offset_right = 1073.0
+offset_bottom = 408.0
 text = "M$: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Store" type="Label" parent="."]
 layout_mode = 1
-offset_left = 530.0
-offset_top = 100.0
-offset_right = 617.0
-offset_bottom = 126.0
+offset_left = 445.0
+offset_top = 76.0
+offset_right = 715.0
+offset_bottom = 148.0
+theme_override_font_sizes/font_size = 50
 text = "OLD STORE"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -59,17 +71,8 @@ offset_left = 970.0
 offset_top = 419.0
 offset_right = 1063.0
 offset_bottom = 465.0
-
-[node name="Label" type="Label" parent="Return"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+theme = ExtResource("2_1301v")
 text = "Return"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="UpgradesStore" type="HBoxContainer" parent="."]
 layout_mode = 0
@@ -82,6 +85,7 @@ metadata/_edit_group_ = true
 [node name="Upgrades" type="Panel" parent="UpgradesStore"]
 custom_minimum_size = Vector2(130, 30)
 layout_mode = 2
+theme = ExtResource("3_2d7am")
 script = ExtResource("2_u5vgr")
 itemName = "Heal 2% more"
 price = 200
@@ -131,11 +135,13 @@ anchor_bottom = 1.0
 offset_top = 0.00499725
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("4_rcivw")
 text = "BUY"
 
 [node name="Upgrades2" type="Panel" parent="UpgradesStore"]
 custom_minimum_size = Vector2(130, 30)
 layout_mode = 2
+theme = ExtResource("3_2d7am")
 script = ExtResource("2_u5vgr")
 itemName = "Eat efficiency "
 price = 100
@@ -185,11 +191,13 @@ anchor_bottom = 1.0
 offset_top = 0.00499725
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("4_rcivw")
 text = "BUY"
 
 [node name="Upgrades3" type="Panel" parent="UpgradesStore"]
 custom_minimum_size = Vector2(130, 30)
 layout_mode = 2
+theme = ExtResource("3_2d7am")
 script = ExtResource("2_u5vgr")
 itemName = "Drink efficiency"
 price = 100
@@ -239,6 +247,7 @@ anchor_bottom = 1.0
 offset_top = 0.00499725
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("4_rcivw")
 text = "BUY"
 
 [node name="ItemStore" type="HBoxContainer" parent="."]
@@ -252,6 +261,7 @@ metadata/_edit_group_ = true
 [node name="Food" type="Panel" parent="ItemStore"]
 custom_minimum_size = Vector2(130, 30)
 layout_mode = 2
+theme = ExtResource("3_2d7am")
 script = ExtResource("2_u5vgr")
 itemName = "Food"
 price = 15
@@ -300,11 +310,13 @@ anchor_bottom = 1.0
 offset_top = 0.00499725
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("4_rcivw")
 text = "BUY"
 
 [node name="Drink" type="Panel" parent="ItemStore"]
 custom_minimum_size = Vector2(130, 30)
 layout_mode = 2
+theme = ExtResource("3_2d7am")
 script = ExtResource("2_u5vgr")
 itemName = "Drinks"
 price = 10
@@ -354,11 +366,13 @@ anchor_bottom = 1.0
 offset_top = 0.00499725
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("4_rcivw")
 text = "BUY"
 
 [node name="Heals" type="Panel" parent="ItemStore"]
 custom_minimum_size = Vector2(130, 30)
 layout_mode = 2
+theme = ExtResource("3_2d7am")
 script = ExtResource("2_u5vgr")
 itemName = "Heals"
 price = 30
@@ -408,6 +422,7 @@ anchor_bottom = 1.0
 offset_top = 0.00499725
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("4_rcivw")
 text = "BUY"
 
 [node name="BuyingSFX" type="AudioStreamPlayer" parent="."]

@@ -11,6 +11,20 @@ size = Vector2(1152, 504)
 script = ExtResource("1_f76xg")
 miningSFX = NodePath("Mining")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -131.0
+offset_top = -45.0
+offset_right = 1311.0
+offset_bottom = 496.0
+color = Color(0.168627, 0.0588235, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = -129.0
+offset_top = 493.0
+offset_right = 1313.0
+offset_bottom = 681.0
+color = Color(0, 0.478431, 0.4, 1)
+
 [node name="RocksSpawner" parent="." instance=ExtResource("1_a1ppy")]
 
 [node name="VisualDonot use" type="Area2D" parent="."]
