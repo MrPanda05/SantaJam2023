@@ -220,7 +220,6 @@ C:\Users\Adelar\Desktop\Uso\Projetos\Programming\_GodotProjects\SantaJam\.godot\
 C:\Users\Adelar\Desktop\Uso\Projetos\Programming\_GodotProjects\SantaJam\.godot\mono\temp\bin\ExportDebug\win-x64\hostfxr.dll
 C:\Users\Adelar\Desktop\Uso\Projetos\Programming\_GodotProjects\SantaJam\.godot\mono\temp\bin\ExportDebug\win-x64\hostpolicy.dll
 C:\Users\Adelar\Desktop\Uso\Projetos\Programming\_GodotProjects\SantaJam\.godot\mono\temp\bin\ExportDebug\win-x64\mscordaccore.dll
-C:\Users\Adelar\Desktop\Uso\Projetos\Programming\_GodotProjects\SantaJam\.godot\mono\temp\bin\ExportDebug\win-x64\mscordaccore_amd64_amd64_6.0.722.32202.dll
 C:\Users\Adelar\Desktop\Uso\Projetos\Programming\_GodotProjects\SantaJam\.godot\mono\temp\bin\ExportDebug\win-x64\mscordbi.dll
 C:\Users\Adelar\Desktop\Uso\Projetos\Programming\_GodotProjects\SantaJam\.godot\mono\temp\bin\ExportDebug\win-x64\mscorrc.dll
 C:\Users\Adelar\Desktop\Uso\Projetos\Programming\_GodotProjects\SantaJam\.godot\mono\temp\bin\ExportDebug\win-x64\msquic.dll
@@ -236,3 +235,5 @@ C:\Users\Adelar\Desktop\Uso\Projetos\Programming\_GodotProjects\SantaJam\.godot\
 C:\Users\Adelar\Desktop\Uso\Projetos\Programming\_GodotProjects\SantaJam\.godot\mono\temp\obj\ExportDebug\win-x64\SantaJam.pdb
 C:\Users\Adelar\Desktop\Uso\Projetos\Programming\_GodotProjects\SantaJam\.godot\mono\temp\obj\ExportDebug\win-x64\SantaJam.genruntimeconfig.cache
 C:\Users\Adelar\Desktop\Uso\Projetos\Programming\_GodotProjects\SantaJam\.godot\mono\temp\obj\ExportDebug\win-x64\ref\SantaJam.dll
+C:\Users\Adelar\Desktop\Uso\Projetos\Programming\_GodotProjects\SantaJam\.godot\mono\temp\bin\ExportDebug\win-x64\mscordaccore_amd64_amd64_6.0.2623.60508.dll
+C:\Users\Adelar\Desktop\Uso\Projetos\Programming\_GodotProjects\SantaJam\.godot\mono\temp\obj\ExportDebug\win-x64\SantaJam.sourcelink.json

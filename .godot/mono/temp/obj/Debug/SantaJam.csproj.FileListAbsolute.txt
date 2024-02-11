@@ -15,3 +15,4 @@ C:\Users\Adelar\Desktop\Uso\Projetos\Programming\_GodotProjects\SantaJam\.godot\
 C:\Users\Adelar\Desktop\Uso\Projetos\Programming\_GodotProjects\SantaJam\.godot\mono\temp\obj\Debug\SantaJam.pdb
 C:\Users\Adelar\Desktop\Uso\Projetos\Programming\_GodotProjects\SantaJam\.godot\mono\temp\obj\Debug\SantaJam.genruntimeconfig.cache
 C:\Users\Adelar\Desktop\Uso\Projetos\Programming\_GodotProjects\SantaJam\.godot\mono\temp\obj\Debug\ref\SantaJam.dll
+C:\Users\Adelar\Desktop\Uso\Projetos\Programming\_GodotProjects\SantaJam\.godot\mono\temp\obj\Debug\SantaJam.sourcelink.json

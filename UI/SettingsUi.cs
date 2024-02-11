@@ -5,54 +5,38 @@ public partial class SettingsUi : Control
 {
 	public Control mainMenuUI, settingsUI;
 
+	[Export] public AudioStreamPlayer soundTest, masterTest;
+
 	public void OnSettingsButtonButtonDown()
 	{
 		mainMenuUI.Visible = true;
 		settingsUI.Visible = false;
 	}
 
-
 	public void OnMasterVolumeValueChanged(float value)
 	{
-		AudioServer.SetBusVolumeDb(0, value);
-
-		if(value == -40)
-		{
-			AudioServer.SetBusMute(0, true);
-		}
-		else
-		{
-			AudioServer.SetBusMute(0, false);
-		}
+		AudioServer.SetBusVolumeDb(0, Mathf.LinearToDb(value));
+		
 	}
 
 	public void OnSoundFxVolumeValueChanged(float value)
 	{
-		AudioServer.SetBusVolumeDb(2, value);
+		AudioServer.SetBusVolumeDb(2, Mathf.LinearToDb(value));
 
-		if(value == -40)
-		{
-			AudioServer.SetBusMute(2, true);
-		}
-		else
-		{
-			AudioServer.SetBusMute(2, false);
-		}
 	}
 	public void OnMusicVolumeValueChanged(float value)
 	{
-		AudioServer.SetBusVolumeDb(1, value);
-
-		if(value == -40)
-		{
-			AudioServer.SetBusMute(1, true);
-		}
-		else
-		{
-			AudioServer.SetBusMute(1, false);
-		}
+		AudioServer.SetBusVolumeDb(1, Mathf.LinearToDb(value));
 	}
 
+	public void OnTestMasterButtonDown()
+	{
+		masterTest.Play();
+	}
+	public void OnTestSoundsButtonDown()
+	{
+		soundTest.Play();
+	}
 
 	public override void _Ready()
     {

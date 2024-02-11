@@ -427,6 +427,7 @@ text = "BUY"
 
 [node name="BuyingSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_fqxa5")
+bus = &"SoundFX"
 
 [connection signal="button_down" from="Return" to="." method="OnReturnButtonDown"]
 [connection signal="button_down" from="UpgradesStore/Upgrades/Buy" to="UpgradesStore/Upgrades" method="OnBuyButtonDown"]

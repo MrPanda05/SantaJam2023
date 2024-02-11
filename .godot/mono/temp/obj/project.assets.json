@@ -2,62 +2,70 @@
   "version": 3,
   "targets": {
     "net6.0": {
-      "Godot.SourceGenerators/4.1.2": {
+      "Godot.SourceGenerators/4.2.1": {
         "type": "package",
         "build": {
           "build/Godot.SourceGenerators.props": {}
         }
       },
-      "GodotSharp/4.1.2": {
+      "GodotSharp/4.2.1": {
         "type": "package",
         "compile": {
-          "lib/net6.0/GodotSharp.dll": {}
+          "lib/net6.0/GodotSharp.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/GodotSharp.dll": {}
+          "lib/net6.0/GodotSharp.dll": {
+            "related": ".xml"
+          }
         }
       }
     },
-    "net6.0/win-x64": {
-      "Godot.SourceGenerators/4.1.2": {
+    "net6.0/osx-arm64": {
+      "Godot.SourceGenerators/4.2.1": {
         "type": "package",
         "build": {
           "build/Godot.SourceGenerators.props": {}
         }
       },
-      "GodotSharp/4.1.2": {
+      "GodotSharp/4.2.1": {
         "type": "package",
         "compile": {
-          "lib/net6.0/GodotSharp.dll": {}
+          "lib/net6.0/GodotSharp.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/GodotSharp.dll": {}
+          "lib/net6.0/GodotSharp.dll": {
+            "related": ".xml"
+          }
         }
       }
     }
   },
   "libraries": {
-    "Godot.SourceGenerators/4.1.2": {
-      "sha512": "WVZ+0PsBSwASQNGmmnv5OEkClwe3M0E0LfzmnRKYNzU7V+qnaW+QU0COTVjzQLBlhIdS9sX2gHAR/ogZdKnhVA==",
+    "Godot.SourceGenerators/4.2.1": {
+      "sha512": "MdLFzDZEMUbXRLH4bLX8o9Blk76M7Op76RyobZ1zyKgcIkgPqG+p53jgLFLSHpBGFKKaW3kB0w6om+wYauwHbw==",
       "type": "package",
-      "path": "godot.sourcegenerators/4.1.2",
+      "path": "godot.sourcegenerators/4.2.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "analyzers/dotnet/cs/Godot.SourceGenerators.dll",
         "build/Godot.SourceGenerators.props",
-        "godot.sourcegenerators.4.1.2.nupkg.sha512",
+        "godot.sourcegenerators.4.2.1.nupkg.sha512",
         "godot.sourcegenerators.nuspec"
       ]
     },
-    "GodotSharp/4.1.2": {
-      "sha512": "iuXYVigWjGVLUIhqGDf5f/kba2ILQKZbE3U6eQrc1582yn5U39j2rDwFPlzfamvxiSu340tHzBnQ3IDi/T/Htw==",
+    "GodotSharp/4.2.1": {
+      "sha512": "6a/GML0jXcwT6LxDBtRx+hpPBUFGAmK7GVb/ehKP53nx0AHA+Yc//B7anXY4U4WCMB+ckgsouWpd8rAeupNfbw==",
       "type": "package",
-      "path": "godotsharp/4.1.2",
+      "path": "godotsharp/4.2.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "godotsharp.4.1.2.nupkg.sha512",
+        "godotsharp.4.2.1.nupkg.sha512",
         "godotsharp.nuspec",
         "lib/net6.0/GodotSharp.dll",
         "lib/net6.0/GodotSharp.xml"
@@ -66,8 +74,8 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "Godot.SourceGenerators >= 4.1.2",
-      "GodotSharp >= 4.1.2"
+      "Godot.SourceGenerators >= 4.2.1",
+      "GodotSharp >= 4.2.1"
     ]
   },
   "packageFolders": {
@@ -111,11 +119,11 @@
         "dependencies": {
           "Godot.SourceGenerators": {
             "target": "Package",
-            "version": "[4.1.2, )"
+            "version": "[4.2.1, )"
           },
           "GodotSharp": {
             "target": "Package",
-            "version": "[4.1.2, )"
+            "version": "[4.2.1, )"
           }
         },
         "imports": [
@@ -124,22 +132,31 @@
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
         "downloadDependencies": [
           {
-            "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
-            "version": "[6.0.7, 6.0.7]"
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[6.0.26, 6.0.26]"
           },
           {
-            "name": "Microsoft.NETCore.App.Runtime.win-x64",
-            "version": "[6.0.7, 6.0.7]"
+            "name": "Microsoft.AspNetCore.App.Runtime.osx-arm64",
+            "version": "[6.0.26, 6.0.26]"
           },
           {
-            "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
-            "version": "[6.0.7, 6.0.7]"
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[6.0.26, 6.0.26]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Runtime.osx-arm64",
+            "version": "[6.0.26, 6.0.26]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[6.0.26, 6.0.26]"
           }
         ],
         "frameworkReferences": {
@@ -147,11 +164,11 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
       }
     },
     "runtimes": {
-      "win-x64": {
+      "osx-arm64": {
         "#import": []
       }
     }

@@ -1,0 +1,107 @@
+[gd_scene load_steps=5 format=3 uid="uid://db24i6xxx10d3"]
+
+[ext_resource type="Script" path="res://UI/WorkUI.cs" id="1_lo3oa"]
+[ext_resource type="Theme" uid="uid://dqc1y40snnfiv" path="res://UI/ButtonsTheme2OO.tres" id="2_334tk"]
+[ext_resource type="Theme" uid="uid://7jjm7u24idj" path="res://UI/ButtonTheme.tres" id="3_wqaw8"]
+[ext_resource type="AudioStream" uid="uid://bphht2byy8fgu" path="res://Sounds/moneySFX.mp3" id="4_iu8ow"]
+
+[node name="WorkUI" type="Control" node_paths=PackedStringArray("sellSFX")]
+layout_mode = 3
+anchors_preset = 0
+offset_top = -2.0
+offset_right = 1152.0
+offset_bottom = 646.0
+script = ExtResource("1_lo3oa")
+sellSFX = NodePath("SellSFX")
+
+[node name="Stop" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1025.0
+offset_top = 551.0
+offset_right = 1135.0
+offset_bottom = 618.0
+theme = ExtResource("2_334tk")
+text = "Stop working"
+
+[node name="SellRock" type="Button" parent="."]
+layout_mode = 0
+offset_left = 389.0
+offset_top = 524.0
+offset_right = 473.0
+offset_bottom = 593.0
+theme = ExtResource("3_wqaw8")
+text = "Sell
+Rock"
+
+[node name="SellIron" type="Button" parent="."]
+layout_mode = 0
+offset_left = 519.0
+offset_top = 524.0
+offset_right = 603.0
+offset_bottom = 593.0
+theme = ExtResource("3_wqaw8")
+text = "Sell
+Iron"
+
+[node name="SellGold" type="Button" parent="."]
+layout_mode = 0
+offset_left = 649.0
+offset_top = 524.0
+offset_right = 733.0
+offset_bottom = 593.0
+theme = ExtResource("3_wqaw8")
+text = "Sell
+Gold"
+
+[node name="SellAll" type="Button" parent="."]
+layout_mode = 0
+offset_left = 779.0
+offset_top = 524.0
+offset_right = 863.0
+offset_bottom = 593.0
+theme = ExtResource("3_wqaw8")
+text = "Sell
+All"
+
+[node name="RockLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 514.0
+offset_right = 59.0
+offset_bottom = 537.0
+text = "Rock: 0"
+
+[node name="IronLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 550.0
+offset_right = 65.0
+offset_bottom = 576.0
+text = "Iron: 0"
+
+[node name="GoldLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 584.0
+offset_right = 65.0
+offset_bottom = 610.0
+text = "Gold: 0"
+
+[node name="MoneyLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1059.0
+offset_top = 516.0
+offset_right = 1099.0
+offset_bottom = 539.0
+text = "M$: 0"
+
+[node name="SellSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_iu8ow")
+volume_db = 10.0
+bus = &"SoundFX"
+
+[connection signal="button_down" from="Stop" to="." method="OnStopButtonDown"]
+[connection signal="button_down" from="SellRock" to="." method="OnSellRockButtonDown"]
+[connection signal="button_down" from="SellIron" to="." method="OnSellIronButtonDown"]
+[connection signal="button_down" from="SellGold" to="." method="OnSellGoldButtonDown"]
+[connection signal="button_down" from="SellAll" to="." method="OnSellAllButtonDown"]

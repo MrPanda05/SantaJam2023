@@ -1,111 +1,23 @@
-[gd_scene load_steps=6 format=3 uid="uid://dwguasin4es3u"]
+[gd_scene load_steps=5 format=3 uid="uid://dwguasin4es3u"]
 
-[ext_resource type="Script" path="res://UI/WorkUI.cs" id="1_2u6yf"]
-[ext_resource type="AudioStream" uid="uid://bphht2byy8fgu" path="res://Sounds/moneySFX.mp3" id="2_h5wpn"]
+[ext_resource type="Texture2D" uid="uid://darh3hxuqg3im" path="res://Art/green/sdfasdfsdf.png" id="2_308s6"]
+[ext_resource type="PackedScene" uid="uid://db24i6xxx10d3" path="res://UI/WorkUi.tscn" id="2_mjttm"]
 [ext_resource type="PackedScene" uid="uid://dlrh4p6062ygw" path="res://Scenes/Mining.tscn" id="2_tw5b1"]
-[ext_resource type="Theme" uid="uid://dqc1y40snnfiv" path="res://UI/ButtonsTheme2OO.tres" id="3_eap2c"]
-[ext_resource type="Theme" uid="uid://7jjm7u24idj" path="res://UI/ButtonTheme.tres" id="4_55hvq"]
+[ext_resource type="Texture2D" uid="uid://c7h7suo2jjvq1" path="res://Art/dirt.png" id="3_rb34o"]
 
 [node name="Work" type="Node2D"]
 
+[node name="Dirt" type="Sprite2D" parent="."]
+position = Vector2(531, 230.5)
+scale = Vector2(53.3125, 16.5313)
+texture = ExtResource("3_rb34o")
+
+[node name="Dirt2" type="Sprite2D" parent="."]
+position = Vector2(518.5, 589)
+scale = Vector2(52.8438, 6)
+texture = ExtResource("2_308s6")
+
 [node name="Mining" parent="." instance=ExtResource("2_tw5b1")]
 
-[node name="WorkUI" type="Control" parent="." node_paths=PackedStringArray("sellSFX")]
-layout_mode = 3
-anchors_preset = 0
-offset_top = -2.0
-offset_right = 1152.0
-offset_bottom = 646.0
-script = ExtResource("1_2u6yf")
-sellSFX = NodePath("SellSFX")
-
-[node name="Stop" type="Button" parent="WorkUI"]
-layout_mode = 0
-offset_left = 1025.0
-offset_top = 551.0
-offset_right = 1135.0
-offset_bottom = 618.0
-theme = ExtResource("3_eap2c")
-text = "Stop working"
-
-[node name="SellRock" type="Button" parent="WorkUI"]
-layout_mode = 0
-offset_left = 389.0
-offset_top = 524.0
-offset_right = 473.0
-offset_bottom = 593.0
-theme = ExtResource("4_55hvq")
-text = "Sell
-Rock"
-
-[node name="SellIron" type="Button" parent="WorkUI"]
-layout_mode = 0
-offset_left = 519.0
-offset_top = 524.0
-offset_right = 603.0
-offset_bottom = 593.0
-theme = ExtResource("4_55hvq")
-text = "Sell
-Iron"
-
-[node name="SellGold" type="Button" parent="WorkUI"]
-layout_mode = 0
-offset_left = 649.0
-offset_top = 524.0
-offset_right = 733.0
-offset_bottom = 593.0
-theme = ExtResource("4_55hvq")
-text = "Sell
-Gold"
-
-[node name="SellAll" type="Button" parent="WorkUI"]
-layout_mode = 0
-offset_left = 779.0
-offset_top = 524.0
-offset_right = 863.0
-offset_bottom = 593.0
-theme = ExtResource("4_55hvq")
-text = "Sell
-All"
-
-[node name="RockLabel" type="Label" parent="WorkUI"]
-layout_mode = 0
-offset_left = 19.0
-offset_top = 514.0
-offset_right = 59.0
-offset_bottom = 537.0
-text = "Rock: 0"
-
-[node name="IronLabel" type="Label" parent="WorkUI"]
-layout_mode = 0
-offset_left = 19.0
-offset_top = 550.0
-offset_right = 65.0
-offset_bottom = 576.0
-text = "Iron: 0"
-
-[node name="GoldLabel" type="Label" parent="WorkUI"]
-layout_mode = 0
-offset_left = 19.0
-offset_top = 584.0
-offset_right = 65.0
-offset_bottom = 610.0
-text = "Gold: 0"
-
-[node name="MoneyLabel" type="Label" parent="WorkUI"]
-layout_mode = 0
-offset_left = 1059.0
-offset_top = 516.0
-offset_right = 1099.0
-offset_bottom = 539.0
-text = "M$: 0"
-
-[node name="SellSFX" type="AudioStreamPlayer" parent="WorkUI"]
-stream = ExtResource("2_h5wpn")
-bus = &"SoundFX"
-
-[connection signal="button_down" from="WorkUI/Stop" to="WorkUI" method="OnStopButtonDown"]
-[connection signal="button_down" from="WorkUI/SellRock" to="WorkUI" method="OnSellRockButtonDown"]
-[connection signal="button_down" from="WorkUI/SellIron" to="WorkUI" method="OnSellIronButtonDown"]
-[connection signal="button_down" from="WorkUI/SellGold" to="WorkUI" method="OnSellGoldButtonDown"]
-[connection signal="button_down" from="WorkUI/SellAll" to="WorkUI" method="OnSellAllButtonDown"]
+[node name="WorkUI" parent="." instance=ExtResource("2_mjttm")]
+mouse_filter = 1

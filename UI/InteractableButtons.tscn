@@ -113,17 +113,14 @@ metadata/_edit_group_ = true
 
 [node name="HealSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_21o77")
-volume_db = -10.0
 bus = &"SoundFX"
 
 [node name="EatSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_tbk64")
-volume_db = -5.0
 bus = &"SoundFX"
 
 [node name="DrinkSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_42c30")
-volume_db = -5.0
 bus = &"SoundFX"
 
 [connection signal="button_down" from="Feed" to="." method="OnFeedButtonDown"]
