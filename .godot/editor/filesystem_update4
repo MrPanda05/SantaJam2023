@@ -1,15 +1,12 @@
-res://Scenes/AnimalScene.tscn
 res://UI/ButtonTheme.tres
 res://UI/ButtonsTheme2OO.tres
 res://UI/ITEMTheme.tres
 res://UI/ShopButton.tres
 res://Scenes/RocksSpawner.cs
-res://Scenes/MainMenu.tscn
+res://Scenes/Music.tscn
+res://Scenes/AnimalScene.tscn
 res://Scenes/MainScene.tscn
-res://Scenes/Work.tscn
-res://Scenes/Mining.tscn
-res://UI/InteractableButtons.tscn
-res://UI/SettingsUi.tscn
+res://Scenes/MainMenu.tscn
 res://Animal/Animal.cs
 res://Components/HealthComponent.cs
 res://Components/HungerComponent.cs
@@ -21,6 +18,7 @@ res://Scenes/Gold.cs
 res://Scenes/Iron.cs
 res://Scenes/MainMenu.cs
 res://Scenes/Mining.cs
+res://Scenes/Music.cs
 res://Scenes/Rock.cs
 res://UI/AnimalSpeachBubble.cs
 res://UI/AnimalUi.cs
@@ -32,5 +30,4 @@ res://UI/MainMenuUi.cs
 res://UI/SettingsUi.cs
 res://UI/StoreUi.cs
 res://UI/WorkUI.cs
-res://UI/WorkUi.tscn
-res://UI/StoreUi.tscn
+res://UI/SettingsUi.tscn

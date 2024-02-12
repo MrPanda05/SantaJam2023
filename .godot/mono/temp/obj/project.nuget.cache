@@ -1,15 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "NRFPhxCeHL+FJwZWOR6e9ku77vyJKSs8H9MF9dp/yZwmQM0hZ1SeJfyWt6bKBC7X3HGzISAdokC6XzThoSq4RA==",
+  "dgSpecHash": "2nuzxzpWospzkTIRrzE+px5VNFP8KK45NR0Ql7ZQ9IcpWJMviug3dA/B7yBOQIZ6SST5gO74rJXK3+gJpn1RCQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Adelar\\Desktop\\Uso\\Projetos\\Programming\\_GodotProjects\\SantaJam\\SantaJam.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Adelar\\.nuget\\packages\\godot.sourcegenerators\\4.2.1\\godot.sourcegenerators.4.2.1.nupkg.sha512",
     "C:\\Users\\Adelar\\.nuget\\packages\\godotsharp\\4.2.1\\godotsharp.4.2.1.nupkg.sha512",
-    "C:\\Users\\Adelar\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.26\\microsoft.netcore.app.ref.6.0.26.nupkg.sha512",
     "C:\\Users\\Adelar\\.nuget\\packages\\microsoft.netcore.app.runtime.osx-arm64\\6.0.26\\microsoft.netcore.app.runtime.osx-arm64.6.0.26.nupkg.sha512",
-    "C:\\Users\\Adelar\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.26\\microsoft.windowsdesktop.app.ref.6.0.26.nupkg.sha512",
-    "C:\\Users\\Adelar\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.26\\microsoft.aspnetcore.app.ref.6.0.26.nupkg.sha512",
     "C:\\Users\\Adelar\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.osx-arm64\\6.0.26\\microsoft.aspnetcore.app.runtime.osx-arm64.6.0.26.nupkg.sha512"
   ],
   "logs": []

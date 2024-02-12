@@ -61,9 +61,9 @@ offset_left = 232.0
 offset_top = 443.0
 offset_right = 949.0
 offset_bottom = 459.0
-max_value = 1.0
+max_value = 2.0
 step = 0.005
-value = 0.35
+value = 0.5
 
 [node name="SettingsButton" type="Button" parent="."]
 layout_mode = 0
