@@ -4,6 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://tgbq55nb3jl7" path="res://Music/firstfl.wav" id="1_u0qiw"]
 
 [node name="Music" type="Node"]
+process_mode = 3
 script = ExtResource("1_aarho")
 
 [node name="Music" type="AudioStreamPlayer" parent="."]

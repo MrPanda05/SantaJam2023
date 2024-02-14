@@ -1,12 +1,13 @@
+res://Scenes/AnimalScene.tscn
 res://UI/ButtonTheme.tres
 res://UI/ButtonsTheme2OO.tres
 res://UI/ITEMTheme.tres
 res://UI/ShopButton.tres
 res://Scenes/RocksSpawner.cs
-res://Scenes/Music.tscn
-res://Scenes/AnimalScene.tscn
 res://Scenes/MainScene.tscn
 res://Scenes/MainMenu.tscn
+res://Scenes/Music.tscn
+res://UI/SettingsUi.tscn
 res://Animal/Animal.cs
 res://Components/HealthComponent.cs
 res://Components/HungerComponent.cs
@@ -30,4 +31,4 @@ res://UI/MainMenuUi.cs
 res://UI/SettingsUi.cs
 res://UI/StoreUi.cs
 res://UI/WorkUI.cs
-res://UI/SettingsUi.tscn
+res://UI/DeathUi.tscn

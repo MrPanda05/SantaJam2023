@@ -1,7 +1,7 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1707695163
+::res://::1707901002
 default_bus_layout.tres::AudioBusLayout::4832487851622871521::1702533421::0::1::::<><>::
-export_presets.cfg::TextFile::-1::1707451313::0::1::::<><>::
+export_presets.cfg::TextFile::-1::1707695799::0::1::::<><>::
 icon.png::CompressedTexture2D::4687560978035883190::1703540543::1703540544::1::::<><>::
 README.md::TextFile::-1::1702689031::0::1::::<><>::
 ::res://Animal/::1707437180
@@ -56,10 +56,10 @@ ThirstComponent.tscn::PackedScene::1196833407978043202::1706586724::0::1::::<><>
 ::res://Inventory/::1706663584
 Inventory.cs::CSharpScript::-1::1707160747::0::1::::<>Node2D<>::
 Inventory.tscn::PackedScene::7361321164108595969::1706663584::0::1::::<><>::res://Inventory/Inventory.cs
-::res://Music/::1707695117
+::res://Music/::1707695422
 firstfl.wav::AudioStreamWAV::1346065207979963722::1707694788::1707695422::1::::<><>::
-::res://Scenes/::1707695145
-AnimalScene.tscn::PackedScene::8264356518788156748::1707450797::0::1::::<><>::uid://dc445b8rc4ild::::res://Inventory/Inventory.tscn<>uid://cj2gofojijhg2::::res://Animal/Animal.tscn<>uid://5xlh7vgqmdb4::::res://UI/AnimalUi.tscn<>uid://b7ugvkqdqnvrw::::res://UI/AnimalSpeachBubble.tscn<>uid://bd2rkx1nhedw3::::res://UI/InteractableButtons.tscn<>uid://bervgyo8tnjro::::res://UI/InventoryUi.tscn
+::res://Scenes/::1707695681
+AnimalScene.tscn::PackedScene::8264356518788156748::1707695681::0::1::::<><>::uid://dc445b8rc4ild::::res://Inventory/Inventory.tscn<>uid://cj2gofojijhg2::::res://Animal/Animal.tscn<>uid://5xlh7vgqmdb4::::res://UI/AnimalUi.tscn<>uid://b7ugvkqdqnvrw::::res://UI/AnimalSpeachBubble.tscn<>uid://bd2rkx1nhedw3::::res://UI/InteractableButtons.tscn<>uid://bervgyo8tnjro::::res://UI/InventoryUi.tscn
 DeathScene.cs::CSharpScript::-1::1707238743::0::1::::<>Node2D<>::
 DeathScene.tscn::PackedScene::7866280899969941731::1707239039::0::1::::<><>::res://Scenes/DeathScene.cs<>uid://dp608phhdaieu
 Gold.cs::CSharpScript::-1::1707328889::0::1::::<>Node2D<>::
@@ -67,13 +67,13 @@ Gold.tscn::PackedScene::7940166588532853610::1707329198::0::1::::<><>::uid://dbt
 Iron.cs::CSharpScript::-1::1707328884::0::1::::<>Node2D<>::
 Iron.tscn::PackedScene::3247675839925730570::1707329198::0::1::::<><>::res://Scenes/Iron.cs<>uid://dbtmvot375e07
 MainMenu.cs::CSharpScript::-1::1707240290::0::1::::<>Node2D<>::
-MainMenu.tscn::PackedScene::442702536314383268::1707450186::0::1::::<><>::res://Scenes/MainMenu.cs<>uid://cuuo6bh3pl0nf::::res://UI/MainMenuUi.tscn<>uid://fx5awx6yjsfc::::res://UI/SettingsUi.tscn
-MainScene.tscn::PackedScene::7946720654274303040::1707450186::0::1::::<><>::uid://dp0k0ks7nhvdk::::res://Scenes/AnimalScene.tscn<>uid://cu77jtuocoe86::::res://Scenes/Store.tscn<>uid://dwguasin4es3u::::res://Scenes/Work.tscn<>uid://dkcqq5x1clst4::::res://Scenes/DeathScene.tscn
+MainMenu.tscn::PackedScene::442702536314383268::1707695681::0::1::::<><>::res://Scenes/MainMenu.cs<>uid://cuuo6bh3pl0nf::::res://UI/MainMenuUi.tscn<>uid://fx5awx6yjsfc::::res://UI/SettingsUi.tscn
+MainScene.tscn::PackedScene::7946720654274303040::1707695681::0::1::::<><>::uid://dp0k0ks7nhvdk::::res://Scenes/AnimalScene.tscn<>uid://cu77jtuocoe86::::res://Scenes/Store.tscn<>uid://dwguasin4es3u::::res://Scenes/Work.tscn<>uid://dkcqq5x1clst4::::res://Scenes/DeathScene.tscn
 Mining.cs::CSharpScript::-1::1707329197::0::1::::<>Node2D<>::
 Mining.tscn::PackedScene::7966911396806873066::1707450751::0::1::::<><>::uid://cg0t7c1nnk6lo::::res://Scenes/RocksSpawner.tscn<>res://Scenes/Mining.cs<>uid://cr31b2i82xrdn::::res://Sounds/miningSFX.mp3
-Music.tscn::PackedScene::6543059354316777503::1707695397::0::1::::<><>::res://Scenes/Music.cs<>uid://tgbq55nb3jl7::::res://Music/firstfl.wav
+Music.cs::CSharpScript::-1::1707695444::0::1::::<>Node<>::
+Music.tscn::PackedScene::6543059354316777503::1707695681::0::1::::<><>::res://Scenes/Music.cs<>uid://tgbq55nb3jl7::::res://Music/firstfl.wav
 PauseScene.tscn::PackedScene::9181443539230334374::1707162686::0::1::::<><>::
-Music.cs::CSharpScript::-1::1707695320::0::1::::<><>::
 Rock.cs::CSharpScript::-1::1707328894::0::1::::<>Node2D<>::
 Rock.tscn::PackedScene::3150849424777922662::1707329198::0::1::::<><>::res://Scenes/Rock.cs<>uid://dbtmvot375e07
 RocksSpawner.cs::CSharpScript::-1::1707695082::0::1::::<>Node2D<>::
@@ -92,7 +92,7 @@ miningSFX.mp3::AudioStreamMP3::6025436145977522367::1707328402::1707328417::1:::
 moneySFX.mp3::AudioStreamMP3::3454164352374647100::1707329875::1707329877::1::::<><>::
 rocks.mp3::AudioStreamMP3::8564900791467350336::1707328305::1707328417::1::::<><>::
 testeating.mp3::AudioStreamMP3::1609410898450358232::1707327787::1707327792::1::::<><>::
-::res://UI/::1707695082
+::res://UI/::1707695721
 AnimalSpeachBubble.cs::CSharpScript::-1::1707445261::0::1::::<>Control<>::
 AnimalSpeachBubble.tscn::PackedScene::4674153588928530036::1706892177::0::1::::<><>::res://UI/AnimalSpeachBubble.cs
 AnimalUi.cs::CSharpScript::-1::1706588388::0::1::::<>Control<>::
@@ -111,7 +111,7 @@ LabelTheme.tres::Theme::3888844772424160724::1707433954::0::1::::<><>::
 MainMenuUi.cs::CSharpScript::-1::1707428816::0::1::::<>Control<>::
 MainMenuUi.tscn::PackedScene::6218811257367507243::1707434381::0::1::::<><>::res://UI/MainMenuUi.cs<>uid://7jjm7u24idj
 SettingsUi.cs::CSharpScript::-1::1707448970::0::1::::<>Control<>::
-SettingsUi.tscn::PackedScene::400247608801680348::1707449976::0::1::::<><>::res://UI/SettingsUi.cs<>uid://7jjm7u24idj::::res://UI/ButtonTheme.tres<>uid://db4hfy34ab8pc::::res://Sounds/Half Life Medkit Sound Effect.mp3
+SettingsUi.tscn::PackedScene::400247608801680348::1707695721::0::1::::<><>::res://UI/SettingsUi.cs<>uid://7jjm7u24idj::::res://UI/ButtonTheme.tres<>uid://db4hfy34ab8pc::::res://Sounds/Half Life Medkit Sound Effect.mp3
 ShopButton.tres::Theme::857747716606923634::1707695082::0::1::::<><>::
 StoreUi.cs::CSharpScript::-1::1707330271::0::1::::<>Control<>::
 StoreUi.tscn::PackedScene::2876417558612730551::1707451443::0::1::::<><>::res://UI/StoreUi.cs<>uid://dqc1y40snnfiv::::res://UI/ButtonsTheme2OO.tres<>res://UI/IndieStoreItems.cs<>uid://bm6sy6kdy4f2a::::res://UI/ITEMTheme.tres<>uid://cabmv2oxalrjb::::res://Sounds/buyingSFX.mp3<>uid://mhq8kngakxre::::res://UI/ShopButton.tres

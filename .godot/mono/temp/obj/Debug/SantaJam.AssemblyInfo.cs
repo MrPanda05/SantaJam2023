@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SantaJam")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9f8b532b8224354f2b2ddb5ada82aecc24ba64c1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3972894bce38b0b21cfe6e782a4cc82b8ef31f2a")]
 [assembly: System.Reflection.AssemblyProductAttribute("SantaJam")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SantaJam")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -5,8 +5,8 @@ public partial class DeathUi : Control
 {
 	public void OnRestartButtonDown()
 	{
-		GetTree().ReloadCurrentScene();
 		GetTree().Paused = false;
+		GetTree().ReloadCurrentScene();
 	}
 	public void OnQuitButtonDown()
 	{
